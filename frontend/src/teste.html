@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h1>Isso é um teste</h1>
+    <form name="usuarioForm" action="formulario" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" />
+        <button type="submit" id="submitButton">Salvar</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+        const form = document.forms.usuarioForm
+        form.onsubmit = async e => {
+            e.preventDefault()
+
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+
+            const options = {
+                method: form.method,
+                body: new URLSearchParams(formData)
+            }
+
+            const resultado = document.getElementById('resultado')
+            try {
+                const resp = await fetch(form.action, options)
+                if (resp.ok) {
+                    const json = await resp.json()
+                    resultado.innerHTML = JSON.stringify(json)
+                } else {
+                    resultado.innerHTML = 'Erro ao enviar a pergunta.'
+                }
+            } catch (e) {
+                resultado.innerHTML = e
+            }
+        };
+    </script>
+</body>
+</html>

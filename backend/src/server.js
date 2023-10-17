@@ -1,13 +1,26 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path')
+
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(express.static('.'))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
-app.get('/index', (request, response, next) => {
-    response.send({nome: "Notebook", preco: 4500})
+const filePath = path.join(__dirname, '../../frontend/src/teste.html')
+
+app.get('/', (req, res) => {
+    res.sendFile(filePath)
 })
 
-app.listen(3003, () => {
-    console.log("Server listen 3003.")
+app.post('/formulario', (req, response) => {
+    response.send({
+        ...req.body,
+        id: 1
+    })
+})
+
+app.listen(3000, () => {
+    console.log("Servidor escutando na porta 3000.");
 })

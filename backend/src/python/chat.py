@@ -8,10 +8,13 @@ import pickle
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import SGD
+from flask import Flask, request, jsonify
 
 nltk.download('punkt')
 
 stemmer = LancasterStemmer()
+
+app = Flask(__name__)
 
 with open('intents.json') as json_data:
     intents = json.load(json_data)
@@ -80,31 +83,31 @@ def bow(sentence, words, show_details=False):
 
     return np.array(bag)
 
-def response(user_input):
-    p = bow(user_input, words)
-    res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.25
-    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-    results.sort(key=lambda x: x[1], reverse=True)
-    return_list = []
-    for r in results:
-        return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+@app.route('/chatbot', methods=['POST'])
 
-    return_list = sorted(return_list, key=lambda x: x['probability'], reverse=True)
-    response_intent = return_list[0]['intent']
+def chatbot_response():
+    data = request.get_json()
+    user_input = data['user_input']
 
-    for intent in intents['intents']:
-        if intent['tag'] == response_intent:
-            responses = intent['responses']
+    def response(user_input):
+        p = bow(user_input, words)
+        res = model.predict(np.array([p]))[0]
+        ERROR_THRESHOLD = 0.25
+        results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+        results.sort(key=lambda x: x[1], reverse=True)
+        return_list = []
+        for r in results:
+            return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
 
-    return random.choice(responses)
+        return_list = sorted(return_list, key=lambda x: x['probability'], reverse=True)
+        response_intent = return_list[0]['intent']
 
-training_data = {'words': words, 'classes': classes, 'train_x': train_x, 'train_y': train_y}
-with open("training_data.pickle", "wb") as f:
-    pickle.dump(training_data, f)
+        for intent in intents['intents']:
+            if intent['tag'] == response_intent:
+                responses = intent['responses']
+                return random.choice(responses)
 
-while True:
-    pergunta = input("Voce - ")
-    if pergunta=="parar": break
-    else:
-        print(response(pergunta))
+    return jsonify({'response': response(user_input)})
+
+if __name__ == '__main__':
+    app.run(debug=True)
