@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+    <title>Chatbot</title>
 </head>
 <body>
-    <h1>Isso é um teste</h1>
-    <form name="usuarioForm" action="formulario" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" />
-        <button type="submit" id="submitButton">Salvar</button>
-    </form>
-    <div id="resultado"></div>
+    <h1>Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="Digite uma mensagem..." />
+        <button id="send-button">Enviar</button>
+    </div>
+
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script>
-        const form = document.forms.usuarioForm
-        form.onsubmit = async e => {
-            e.preventDefault()
+        const chatLog = document.getElementById('chat-log');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
 
-            const formData = new FormData(form)
-            formData.append('ajax', true)
+        sendButton.addEventListener('click', async () => {
+            const message = userInput.value;
+            userInput.value = '';
 
-            const options = {
-                method: form.method,
-                body: new URLSearchParams(formData)
-            }
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ user_input: message })
+            });
 
-            const resultado = document.getElementById('resultado')
-            try {
-                const resp = await fetch(form.action, options)
-                if (resp.ok) {
-                    const json = await resp.json()
-                    resultado.innerHTML = JSON.stringify(json)
-                } else {
-                    resultado.innerHTML = 'Erro ao enviar a pergunta.'
-                }
-            } catch (e) {
-                resultado.innerHTML = e
-            }
-        };
+            const { response: botResponse } = await response.json();
+            appendMessage('User', message);
+            appendMessage('Bot', botResponse);
+        });
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = `<strong>${sender}: </strong>${message}`;
+            chatLog.appendChild(messageElement);
+        }
     </script>
 </body>
 </html>
