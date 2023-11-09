@@ -1,7 +1,7 @@
 {"intents": [
     {"tag": "saudacao",
      "patterns": ["Oi", "Ola", "Oi tudo bem:", "Tem alguem ai?", "Pode me ajudar"],
-     "responses": ["Oi tudo bem e voce ?", "Ola, como posso te ajudar ?", "Oi, como podemos te ajudar?"],
+     "responses": ["Oi tudo bem e voce ?", "Ola, como posso te ajudar ?", "Oi, como podemos te ajudar?", "Coe, como posso ajudar?"],
      "context_set": ""
     },
     {"tag": "despedida",
