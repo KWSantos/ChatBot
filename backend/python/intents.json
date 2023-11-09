@@ -10,7 +10,7 @@
     },
     {"tag": "agradecimento",
      "patterns": ["Obrigado", "Obrigado pela ajuda", "Muito obrgado","Voce me ajudou", "valeu", "beijos lindo"],
-     "responses": ["De nada!", "Fico feliz em ajudar!", "Disponha", "Por nada!"]
+     "responses": ["De nada!", "Fico feliz em ajudar!", "Disponha", "Por nada!", "Que isso, nao foi nada!"]
     },
     {"tag": "horarioAluno",
      "patterns": ["Gostaria de saber sobre horarios das aulas?", "As aulas começam que horas?", "Qual o horario de aula", "em que horario tenho aula hoje"],
