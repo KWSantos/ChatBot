@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chatbot</title>
+    <title>Chatbot Interface</title>
 </head>
 <body>
-    <h1>Chatbot</h1>
-    <div id="chat-container">
-        <div id="chat-log"></div>
-        <input type="text" id="user-input" placeholder="Digite uma mensagem..." />
-        <button id="send-button">Enviar</button>
-    </div>
+    <div id="chatbox"></div>
+    <input type="text" id="user_input" placeholder="Digite sua mensagem...">
+    <button onclick="sendMessage()">Enviar</button>
 
-    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script>
-        const chatLog = document.getElementById('chat-log');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
-
-        sendButton.addEventListener('click', async () => {
-            const message = userInput.value;
-            userInput.value = '';
-
-            const response = await fetch('/chat', {
+        function sendMessage() {
+            const user_input = document.getElementById('user_input').value;
+            fetch('http://localhost:3000', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ user_input: message })
+                body: JSON.stringify({ user_input: user_input })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatbox = document.getElementById('chatbox');
+                const newMessage = document.createElement('p');
+                newMessage.textContent = `Usuário: ${user_input}`;
+                chatbox.appendChild(newMessage);
+
+                const botResponse = document.createElement('p');
+                botResponse.textContent = `Chatbot: ${data.response}`;
+                chatbox.appendChild(botResponse);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar mensagem:', error);
             });
 
-            const { response: botResponse } = await response.json();
-            appendMessage('User', message);
-            appendMessage('Bot', botResponse);
-        });
-
-        function appendMessage(sender, message) {
-            const messageElement = document.createElement('div');
-            messageElement.innerHTML = `<strong>${sender}: </strong>${message}`;
-            chatLog.appendChild(messageElement);
+            document.getElementById('user_input').value = '';
         }
     </script>
 </body>

@@ -28,9 +28,30 @@
      "patterns": ["Onde tenho acesso as informações sobre Iniciação cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?" ],
      "responses": ["Voce pode encontrar mais informações sobre Iniciação Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
     },
-    {"tag": "calendario",
-     "patterns": ["Onde vejo o calendario deste ano?", "Pode me mandar o calendario?", "Quero perguntar sobre calendario"],
-     "responses": ["Acesse o link: https://www3.unicentro.br/calendario/","Saiba mais sobre calendario no link: https://www3.unicentro.br/calendario/"]
+    {
+      "tag": "informacoes_cursos",
+      "patterns": ["Quais cursos vocês oferecem?", "Quais são os cursos disponíveis?", "Quero informações sobre os cursos"],
+      "response": ["Oferecemos uma ampla gama de cursos em áreas como Engenharia, Medicina, Humanidades e muito mais. Você pode encontrar mais detalhes em nosso site oficial."]
+    },
+    {
+      "tag": "suporte_academico",
+      "patterns": ["Preciso de ajuda com meu curso", "Estou com dificuldades acadêmicas", "Como posso obter suporte acadêmico?"],
+      "response": ["Você pode entrar em contato com o departamento acadêmico pelo e-mail [email protegido] ou visitar nosso centro de suporte acadêmico no campus para obter ajuda personalizada."]
+    },
+    {
+      "tag": "informacoes_matricula",
+      "patterns": ["Como faço para me matricular?", "Quais são os requisitos de matrícula?", "Quero informações sobre o processo de matrícula"],
+      "response": ["Para informações sobre matrícula, requisitos e prazos, visite nosso portal de admissões em nosso site oficial. Lá você encontrará todos os detalhes necessários."]
+    },
+    {
+      "tag": "informacoes_eventos",
+      "patterns": ["Quais eventos estão acontecendo na universidade?", "Como posso participar dos eventos?", "Quero informações sobre os próximos eventos"],
+      "response": ["Mantenha-se atualizado sobre todos os eventos atuais e futuros visitando a seção de eventos em nosso site oficial. Lá você encontrará detalhes sobre como participar de cada evento."]
+    },
+    {
+      "tag": "contato_atendimento",
+      "patterns": ["Preciso falar com alguém da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade"],
+      "response": ["Você pode entrar em contato com nosso atendimento ao aluno ligando para o número 123-456-7890 ou enviando um e-mail para [email protegido]. Teremos prazer em ajudar."]
     }
   ]
   }
