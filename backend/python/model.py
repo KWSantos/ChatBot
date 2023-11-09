@@ -3,7 +3,6 @@ import json
 import pickle
 import numpy as np
 import tensorflow as tf
-
 import nltk
 nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
