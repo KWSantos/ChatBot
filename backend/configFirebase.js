@@ -35,4 +35,4 @@ const sendMessage = (message) => {
   message = ""
 }
 
-module.exports(sendMessage)
+export {sendMessage}

@@ -1,21 +1,9 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const consign = require('consign')
-const body = require('body-parser')
-const sendMessage = require('./configFirebase.js')
-app.use(body.json())
-app.use(body.urlencoded({ extended: true }))
-app.use(cors())
-app.use(express.static(__dirname))
-app.use(express.json())
+import express from 'express';
+import {sendMessage} from './configFirebase.js';
 
-consign()
-    // .then('./controllers')
-    .then('./routes')
-    .into(app)
-
+const app = express();
+app.use(express.json());
 
 app.listen(3000, () => {
-    console.log("Servidor escutando na porta 3000.")
-})
+    console.log("Servidor escutando na porta 3000.");
+});

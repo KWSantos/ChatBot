@@ -1,4 +1,4 @@
-module.exports = app => {
+const app = app => {
     app.get('/', (req, res) => {
         res.sendFile('C:/Users/Kaue/Documents/ChatBot/frontend/views/index.html')
     })
@@ -9,3 +9,5 @@ module.exports = app => {
         res.send("Mensagem enviada com sucesso")
     })
 }
+
+export { app }
