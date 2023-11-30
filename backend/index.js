@@ -1,5 +1,5 @@
 import express from 'express';
-import {sendMessage} from './configFirebase.js';
+import {sendMessage} from './models/mainModel';
 
 const app = express();
 app.use(express.json());
