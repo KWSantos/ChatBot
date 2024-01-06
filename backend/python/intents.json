@@ -50,7 +50,7 @@
     },
     {
       "tag": "contato_atendimento",
-      "patterns": ["Preciso falar com alguém da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade"],
+      "patterns": ["Preciso falar com alguém da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade", "Contate alguem da universidade por mim"],
       "response": ["Você pode entrar em contato com nosso atendimento ao aluno ligando para o número 123-456-7890 ou enviando um e-mail para [email protegido]. Teremos prazer em ajudar."]
     }
   ]
