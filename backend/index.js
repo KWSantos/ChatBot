@@ -1,9 +1,10 @@
-import express from 'express';
-import {sendMessage} from './models/mainModel';
+import express from 'express'
+const app = express()
+// import {sendMessage} from './models/mainModel'
+import { telaInicialrouter } from './routes/telaInicialRoute.js'
 
-const app = express();
-app.use(express.json());
+app.use(telaInicialrouter)
 
 app.listen(3000, () => {
-    console.log("Servidor escutando na porta 3000.");
-});
+    console.log("Servidor escutando na porta 3000.")
+})
