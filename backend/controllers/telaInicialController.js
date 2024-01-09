@@ -1,4 +1,4 @@
-import  telaInicialModel  from "../models/telaInicialModel.js"
+const telaInicialModel = require('../models/telaInicialModel')
 
 let getTelaInicial = (req, res) => {
     res.sendFile('C:/Users/kaues/Documents/ChatBot/backend/telaInicial.html')
@@ -9,4 +9,5 @@ let postAcesso = (req, res) => {
     const acesso = telaInicial.acesso()
     res.send(acesso)
 }
-export { getTelaInicial, postAcesso }
+
+module.exports = { getTelaInicial, postAcesso }

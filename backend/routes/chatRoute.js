@@ -1,9 +1,9 @@
-import express from 'express'
+const express = require('express')
 const chatRouter = express.Router()
 
-import { getChat, postMensagem } from '../controllers/chatController.js'
+const { getChat, postMensagem } = require('../controllers/chatController')
 
 chatRouter.get('/chat', getChat)
 chatRouter.post('/sendMessage', postMensagem)
 
-export { chatRouter }
+module.exports = chatRouter 

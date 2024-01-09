@@ -1,8 +1,9 @@
-import express from 'express'
+const express = require('express')
 const app = express()
-import path  from "path"
-import { telaInicialrouter } from './routes/telaInicialRoute.js'
-import { chatRouter } from './routes/chatRoute.js'
+const path = require('path')
+const telaInicialrouter = require('./routes/telaInicialRoute.js')
+const chatRouter = require('./routes/chatRoute.js')
+const body = require('body-parser')
 
 app.use(express.static(path.join(path.resolve(process.cwd(), 'dist'), 'build')))
 

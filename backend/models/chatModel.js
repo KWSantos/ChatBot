@@ -1,6 +1,6 @@
-import firebase from "../configFirebase.js"
+const firebase = require('../configFirebase')
 
-export default class chatModel {
+class chatModel {
     constructor(){}
     enviarMensagem(mensagem){
         const database = firebase.database()
@@ -10,3 +10,5 @@ export default class chatModel {
         database.ref('messages/').push(message)
     }
 }
+
+module.exports = chatModel

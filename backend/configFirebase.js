@@ -1,5 +1,5 @@
-import firebase from "firebase/app"
-import 'firebase/database'
+const firebase = require('firebase/app')
+const database = require('firebase/database')
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_ulYCrN2P0--sTqFcaY5rj3xKG6D09wQ",
@@ -12,6 +12,6 @@ const firebaseConfig = {
   measurementId: "G-5W6KZBN2J4"
 }
 
-firebase.initializeApp(firebaseConfig)
+const db = firebase.initializeApp(firebaseConfig)
 
-export default firebase
+module.exports = db
