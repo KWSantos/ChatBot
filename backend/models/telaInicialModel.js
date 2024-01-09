@@ -1,8 +1,6 @@
-class telaInicialModel {
+export default class telaInicialModel {
     constructor(){}
     acesso(){
-        return 'Acessou o app!'
+        return "Acessou o App!"
     }
 }
-
-export { telaInicialModel }
