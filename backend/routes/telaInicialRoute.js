@@ -1,8 +1,8 @@
 const express = require('express')
 const telaInicialrouter = express.Router()
-const { getTelaInicial, postAcesso } = require('../controllers/telaInicialController')
+const telaInicialController = require('../controllers/telaInicialController')
 
-telaInicialrouter.get('/', getTelaInicial)
-telaInicialrouter.post('/acesso', postAcesso)
+telaInicialrouter.get('/', telaInicialController.getTelaInicial)
+telaInicialrouter.post('/acesso', telaInicialController.postAcesso)
 
 module.exports = telaInicialrouter

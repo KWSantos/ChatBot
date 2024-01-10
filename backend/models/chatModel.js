@@ -1,13 +1,13 @@
-const firebase = require('../configFirebase')
+const app = require('../configFirebase')
+const { getDatabase, ref, set } = require('firebase/database')
 
 class chatModel {
     constructor(){}
     enviarMensagem(mensagem){
-        const database = firebase.database()
-        const message = {
-            mensagemText: mensagem,
-        }
-        database.ref('messages/').push(message)
+        const db = getDatabase(app)
+        set(ref(db, '/messages'), {
+            mensagem: mensagem
+        })
     }
 }
 
