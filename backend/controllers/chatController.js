@@ -8,5 +8,6 @@ exports.postMensagem = ((req, res) => {
     const mensagem = req.body.mensagem
     const chat = new chatModel()
     const enviarMensagem = chat.enviarMensagem(mensagem)
+    const receberMensagem = chat.receberMensagem()
     res.send("Sucesso!")
 })
