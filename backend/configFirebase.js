@@ -1,6 +1,4 @@
-import { initializeApp } from "firebase/app"
-import { getStorage } from "firebase/storage"
-import { getDatabase, ref, push, onChildAdded, set } from "firebase/database"
+const {initializeApp} = require('firebase/app')
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_ulYCrN2P0--sTqFcaY5rj3xKG6D09wQ",
@@ -13,12 +11,6 @@ const firebaseConfig = {
   measurementId: "G-5W6KZBN2J4"
 }
 
-const appFire = initializeApp(firebaseConfig)
-const storage = getStorage(appFire)
-const db = getDatabase(appFire)
+const app = initializeApp(firebaseConfig)
 
-const getCurrentTime = () => {
-  return new Date().toISOString()
-}
-
-export { appFire, storage, db, getCurrentTime }
+module.exports = app
