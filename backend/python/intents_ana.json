@@ -57,6 +57,26 @@
       "tag": "apoio_psicologico",
       "patterns": ["Apoio psicológico", "Onde posso encontrar ajuda emocional?", "Serviços de aconselhamento","Estou triste, pode me ajudar?", "Me sinto ansiosa", "Me sinto depressiva"],
       "response": ["Você pode entrar em contato com nosso atendimento ao aluno COORAE ligando ou mandando mensagem para o número (42)98824-0655. Teremos prazer em ajudar."]
+    },
+    {
+      "tag": "editais_corae",
+      "patterns": ["Quais são os editais atuais da COOREA?", "Onde posso encontrar informações sobre os serviços oferecidos pela COOREA?","Como faço para me inscrever nos programas de apoio ao estudante da COOREA?"],
+      "response": ["Para mais informações acesse: https://www3.unicentro.br/apoioaoestudante/editais/"]
+    },
+    {
+      "tag": "editais_especializacao",
+      "patterns": ["Quais são as especializações oferecidas atualmente?", "Onde posso encontrar informações sobre os requisitos para participar de uma especialização?", "Quando geralmente são divulgados os editais para novas especializações?"],
+      "response": ["Para mais informações acesse: https://www3.unicentro.br/especializacao/editais/"]
+    },
+    {
+      "tag": "editais_proec",
+      "patterns": [ "Quais são os editais abertos pela PROEC atualmente?","Como posso participar de projetos de extensão oferecidos pela PROEC?", "Onde encontro informações sobre os prazos de inscrição para os editais da PROEC?"],
+      "response": ["Para mais informações acesse: https://www3.unicentro.br/proec/category/todos-os-editais/"]
+    },
+    {
+      "tag": "editais_proen",
+      "patterns": [ "Quais são os editais abertos pela PROEN neste semestre?","Como posso obter informações sobre os processos seletivos da PROEN?","Quais são os requisitos para participar de programas de ensino oferecidos pela PROEN?"],
+      "response": ["Para mais informações acesse: https://www3.unicentro.br/proen/editais/"]
     }
   ]
   }
