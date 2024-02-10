@@ -1,13 +1,18 @@
 const chatModel = require('../models/chatModel')
+const chat = new chatModel()
 
 exports.getChat = ((req, res) => {
-    res.sendFile('C:/Users/kaues/Documents/ChatBot/backend/telaInicial.html')
+    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/telachat.html')
+    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/style.css')
+    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/index.js')
 })
 
-exports.postMensagem = ((req, res) => {
+exports.postSendMensagem = ((req, res) => {
     const mensagem = req.body.mensagem
-    const chat = new chatModel()
     const enviarMensagem = chat.enviarMensagem(mensagem)
+})
+
+exports.postLoadMensagem = ((req, res) => {
     const receberMensagem = chat.receberMensagem()
-    res.send("Sucesso!")
+    res.status(200).send({message: receberMensagem})
 })
