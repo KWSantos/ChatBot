@@ -2,9 +2,9 @@
   "name": "chatbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.cjs",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon index.cjs"
   },
   "keywords": [],
   "author": "",
