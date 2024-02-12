@@ -1,15 +1,14 @@
 import React from "react";
 
-export default function chat(){
-    return{
-        <div class="chats">
-            <div class="chat">
-                <div class="chat-body">
-                    <div class="chat-content" id="chat-content">
-
-                    </div>
-                </div>
-            </div>
+export default function Chat() {
+  return (
+    <div className="chats">
+      <div className="chat">
+        <div className="chat-body">
+          <div className="chat-content" id="chat-content">
+          </div>
         </div>
-    }
+      </div>
+    </div>
+  );
 }
