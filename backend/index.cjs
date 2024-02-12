@@ -14,6 +14,6 @@ app.use(express.static(path.join(path.resolve(process.cwd(), 'dist'), 'build')))
 app.use(chatRouter)
 app.use(userRouter)
 
-server.listen(3000, () => {
+server.listen(3001, () => {
  console.log('Servidor iniciado na porta 3000!')
 })
