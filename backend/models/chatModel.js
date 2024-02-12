@@ -1,19 +1,10 @@
 const axios = require("axios")
-const app = require('../configFirebase')
-const { getDatabase, ref, get, set, child, push, onValue, serverTimestamp, query, orderByChild, limitToLast } = require('firebase/database')
+const app = require('../services/configFirebase')
+const { getDatabase, ref, onValue, query, orderByChild, limitToLast } = require('firebase/database')
 const { response } = require("express")
 
 class chatModel {
-    enviarMensagem(mensagem){
-        const db = getDatabase(app)
-        const refMessages = ref(db, 'messages/')
-        const newMessage = push(refMessages)
-        set(newMessage, {
-            mensagem: mensagem,
-            timestamp: serverTimestamp()
-        })
-    }
-    receberMensagem(){
+    loadResponse(){
         const db = getDatabase(app);
         const refMessages = ref(db, 'messages/');
         const messagesQuery = query(refMessages, orderByChild('timestamp'), limitToLast(1));

@@ -1,17 +1,16 @@
-const messageInput = document.querySelector('.form')
-const sendButton = document.querySelector('.btn-send')
+const userModel = require("../../backend/models/userModel");
 
-sendButton.addEventListener('click', () => {
-    const mensagem = messageInput.value;
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({mensagem})
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.message)
-    })
-})
+userModel.prototype.updateChat = (messages) => {
+    const chatContent = document.getElementById('chat-content');
+    let chatHtml = '';
+    messages.forEach(message => {
+        chatHtml += `<div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-content">
+                        <p>${message.mensagem}</p>
+                        </div>
+                    </div>
+                    </div>`;
+    });
+    chatContent.innerHTML = chatHtml;
+}
