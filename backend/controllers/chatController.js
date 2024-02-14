@@ -1,10 +1,9 @@
 const chatModel = require('../models/chatModel')
 const chat = new chatModel()
+const path = require('path')
 
 exports.getChat = ((req, res) => {
-    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/telachat.html')
-    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/style.css')
-    res.sendFile('C:/Users/kaues/Documents/ChatBot/frontend/views/index.js')
+    res.sendFile(path.join('C:/Users/kaues/Documents/ChatBot/backend', 'views', 'chatView.html'))
 })
 
 exports.postLoadResponse = ((req, res) => {
