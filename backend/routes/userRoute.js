@@ -4,5 +4,6 @@ const userRouter = express.Router()
 const userController = require('../controllers/userController')
 
 userRouter.post('/sendMessage', userController.postSendMessage)
-//comentario ne porra
+userRouter.get('/loadMessage', userController.getLoadMessage)
+
 module.exports = userRouter

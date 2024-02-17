@@ -6,7 +6,8 @@ exports.getChat = ((req, res) => {
     res.sendFile(path.join('C:/Users/kaues/Documents/ChatBot/backend', 'views', 'chatView.html'))
 })
 
-exports.postLoadResponse = ((req, res) => {
+exports.getLoadResponse = ((req, res) => {
     const loadResponse = chat.loadResponse()
+    console.log(loadResponse)
     res.status(200).send({message: loadResponse})
 })
