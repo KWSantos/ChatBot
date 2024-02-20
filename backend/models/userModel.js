@@ -1,5 +1,5 @@
 const app = require('../services/configFirebase')
-const { getDatabase, ref, set,push, serverTimestamp, onChildAdded, orderByChild, query, limitToLast} = require('firebase/database')
+const { getDatabase, ref, set,push, serverTimestamp, onChildAdded } = require('firebase/database')
 
 class userModel {
 

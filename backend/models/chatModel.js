@@ -1,7 +1,6 @@
 const axios = require("axios")
 const app = require('../services/configFirebase')
-const { getDatabase, ref, onValue, query, orderByChild, limitToLast, onChildAdded } = require('firebase/database')
-const { response } = require("express")
+const { getDatabase, ref,  onChildAdded } = require('firebase/database')
 
 class chatModel {
     loadResponse(){
@@ -10,9 +9,9 @@ class chatModel {
         
         return new Promise((resolve, reject) => {
             onChildAdded(refMessages, (snapshot) => {
-                const messages = snapshot.val()
+                const messages = snapshot.val().mensagem
                 const response = axios.post('http://localhost:5000/data', {
-                    message: messages.mensagem
+                    message: messages
                 })
                 resolve(response.data.response)
             }, (error) => {
