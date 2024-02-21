@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- aaaaa -->
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -19,13 +19,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </head>
 
 <body>
 
     <!-- ======= Mobile nav toggle button ======= -->
-    <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+    <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button>
     <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex flex-column justify-content-center">
@@ -62,28 +61,22 @@
             <div class="panel-body" id="chat-content">
               <div class="ps-container ps-theme-default ps-active-y" style="overflow-y: scroll !important; height:400px !important;">
                 <div class="chats">
-<<<<<<< HEAD
-                    <div class = "messageConteiner" id = "messageConteiner">
-                      <div class = "messages" id = "messages"> </div>
+                  <div class="messsagesContainer" id="messsagesContainer">
+                    <div class="messages" id="messages">
+                      
                     </div>
-                  <!-- Chat messages will be inserted here -->
-=======
-                  <div class ="chat-content">Aqui msg do usuario</div>
-                  <div class="chat-left">
-                    <div class="chat-content">Aqui msg do chatbot</div>
                   </div>
->>>>>>> 860138cae6774db58442f0b340e7a1798a7e3680
                 </div>
               </div>
             </div>
           </div>
           <!-- End Panel Chat -->
           <div class="panel-footer">
-            <form id="message-form">
+            <form id="message-form" onsubmit="sendMessage(event).then(loadMessage())">
               <div class="input-group">
                 <input type="text" id="user-input" class="form-control form" name="mensagem" placeholder="Digite aqui sua mensagem">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary btn-send" type="submit"><i class="bx bx-send"></i></button>
+                  <button class="btn btn-primary btn-send" type="submit" id="button-send" autofocus><i class="bx bx-send"></i></button>
                 </span>
               </div>
             </form>
@@ -140,23 +133,46 @@
   
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-  </body>
-  
-  <script>
-    const createState = (initialValue) => {
-      let value = initialValue
-      const getValue = () => value
-      const setValue = (newValue) => {
-        value = newValue
+
+    <script>
+      const sendMessage = async (event) => {
+        event.preventDefault()
+        const input = document.getElementById('user-input')
+        axios.post('http://localhost:3000/sendMessage', {
+          message: input.value
+        })
+        input.value = ''
       }
-      return { getValue, setValue }
-    }
-    const inputRef = { current: null }
-    const handleSubmit = () => {
-    const message = document.getElementById('user-input')
-    if(!message.trim()) return
-    
-    }
-  </script>
+      const loadMessage = async () => {
+        const messageDiv = document.getElementById("messages")
+        messageDiv.innerText = ''
+
+        const dataUser = await axios.get('http://localhost:3000/loadMessage')
+        const dataChat = await axios.get('http://localhost:3000/loadResponse')
+
+        const messageChat = dataUser.data
+        const messageUser = dataChat.data
+        const messagesDivUser = document.createElement('div')
+        const messagesDivChat = document.createElement('div')
+        const messageTextUser = document.createElement('p')
+        const messageTextChat = document.createElement('p')
+
+        messagesDivUser.classList.add('user')
+        messageTextUser.innerText = `${messageUser}`
+        messagesDivChat.classList.add('chat')
+        messageTextChat.innerText = `${messageChat}`
+        messagesDivUser.appendChild(messageTextUser)
+        messagesDivChat.appendChild(messageTextChat)
+        
+        const messagesContainer = document.getElementById('messages')
+        const messagesContainer2 = document.getElementById('messagesContainer')
+        messagesContainer.appendChild(messagesDivUser)
+        messagesContainer.appendChild(messagesDivChat)
+        messagesContainer2.scrollTop = messagesContainer.scrollHeight
+      }
+      window.sendMessage = sendMessage
+    </script>
+
+  </body>
 
   </html>
