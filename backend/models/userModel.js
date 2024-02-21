@@ -1,5 +1,5 @@
 const app = require('../services/configFirebase')
-const { getDatabase, ref, set,push, serverTimestamp, onValue} = require('firebase/database')
+const { getDatabase, ref, set,push, serverTimestamp, onChildAdded } = require('firebase/database')
 
 class userModel {
 
@@ -12,21 +12,18 @@ class userModel {
       timestamp: serverTimestamp()
     })
   }
-  listenMessages(callback) {
-    const db = getDatabase(app);
-    const refMessages = ref(db, 'messages/');
   
-    onValue(refMessages, (snapshot) => {
-      const messages = [];
-      snapshot.forEach((childSnapshot) => {
-        messages.push({
-          mensagem: childSnapshot.val().mensagem,
-          timestamp: childSnapshot.val().timestamp
-        });
-      });
-  
-      callback(messages);
-    }, { onlyOnce: false });
+  loadMessage() {
+    const db = getDatabase(app)
+    const refMessages = ref(db, 'messages/')
+    return new Promise((resolve, reject) => {
+      onChildAdded(refMessages, (snapshot) => {
+        const message = snapshot.val().mensagem;
+        resolve(message);
+      }, (error) => {
+        reject(error);
+      })
+    })
   }
 }
 

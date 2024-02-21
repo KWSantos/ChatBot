@@ -4,6 +4,6 @@ const chatRouter = express.Router()
 const chatController = require('../controllers/chatController')
 
 chatRouter.get('/', chatController.getChat)
-chatRouter.post('/loadResponse', chatController.postLoadResponse)
+chatRouter.get('/loadResponse', chatController.getLoadResponse)
 
 module.exports = chatRouter 
