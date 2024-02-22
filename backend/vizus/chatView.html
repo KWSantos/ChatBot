@@ -147,6 +147,7 @@
         const messagesDivUser = document.createElement('div')
         const messageTextUser = document.createElement('p')
 
+        messagesDivUser.className = 'chat-content'
         messagesDivUser.classList.add('user')
         messageTextUser.innerText = `${message}`
         messageTextUser.style.display = 'flex'
@@ -161,6 +162,7 @@
         const messagesDivChat = document.createElement('div')
         const messageTextChat = document.createElement('p')
 
+        messagesDivChat.className = 'chat-left'
         messagesDivChat.classList.add('chat')
         messageTextChat.innerText = `${message}`
         messageTextChat.style.display = 'flex'
