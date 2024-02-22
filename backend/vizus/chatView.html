@@ -143,28 +143,52 @@
         })
         input.value = ''
       }
-      const loadMessage = async () => {
-        const messageDiv = document.getElementById("messages");
-        messageDiv.innerText = "";
-        
-        const mensagensUser = []
-        
-        const dataChat = await axios.get('http://localhost:3000/loadMessage')
-        const messageUser = dataChat.data
-        mensagensUser.push(messageUser)
-        mensagensUser.forEach((i) => {
-          const messagesDivUser = document.createElement('div')
-          messagesDivUser.className = 'chat-content'
-          const messageTextUser = document.createElement('p')
-          messagesDivUser.classList.add('user')
-          messageTextUser.innerText = `${mensagensUser[i]}`
+      const loadUserMessage = async (message, messagesContainer) => {
+        const messagesDivUser = document.createElement('div')
+        const messageTextUser = document.createElement('p')
 
-          messagesDivUser.appendChild(messageTextUser)
-          const messagesContainer = document.getElementById('messages')
-          const messagesContainer2 = document.getElementById('messagesContainer')
-          messagesContainer.appendChild(messagesDivUser)
-        })
+        messagesDivUser.classList.add('user')
+        messageTextUser.innerText = `${message}`
+        messageTextUser.style.display = 'flex'
+        messageTextUser.style.justifyContent = 'flex-end'
+        messagesDivUser.appendChild(messageTextUser)
+
+        messagesContainer.appendChild(messagesDivUser)
+        messagesContainer.scrollTop = messagesContainer.scrollHeight
       }
+
+      const loadChatMessage = async (message, messagesContainer) => {
+        const messagesDivChat = document.createElement('div')
+        const messageTextChat = document.createElement('p')
+
+        messagesDivChat.classList.add('chat')
+        messageTextChat.innerText = `${message}`
+        messageTextChat.style.display = 'flex'
+        messageTextChat.style.justifyContent = 'flex-start'
+        messagesDivChat.appendChild(messageTextChat)
+
+        messagesContainer.appendChild(messagesDivChat)
+        messagesContainer.scrollTop = messagesContainer.scrollHeight
+      }
+
+      const loadMessage = async () => {
+        const messageDiv = document.getElementById("messages")
+        messageDiv.innerText = ''
+
+        const dataUser = await axios.get('http://localhost:3000/loadMessage')
+        const dataChat = await axios.get('http://localhost:3000/loadResponse')
+
+        const messageChat = dataUser.data
+        const messageUser = dataChat.data
+
+        const messagesContainer = document.getElementById('messages')
+        loadUserMessage(messageUser, messagesContainer)
+        loadChatMessage(messageChat, messagesContainer)
+      }
+
+
+
+
       const loadResponse = async () => {
         const messageDiv = document.getElementById("messages")
         messageDiv.innerText = ''
@@ -189,6 +213,8 @@
 
         messagesContainer.appendChild(messagesDivChat1)
       }
+
+      
       window.sendMessage = sendMessage
     </script>
 
