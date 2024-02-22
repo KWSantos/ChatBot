@@ -144,31 +144,50 @@
         input.value = ''
       }
       const loadMessage = async () => {
+        const messageDiv = document.getElementById("messages");
+        messageDiv.innerText = "";
+        
+        const mensagensUser = []
+        
+        const dataChat = await axios.get('http://localhost:3000/loadMessage')
+        const messageUser = dataChat.data
+        mensagensUser.push(messageUser)
+        mensagensUser.forEach((i) => {
+          const messagesDivUser = document.createElement('div')
+          messagesDivUser.className = 'chat-content'
+          const messageTextUser = document.createElement('p')
+          messagesDivUser.classList.add('user')
+          messageTextUser.innerText = `${mensagensUser[i]}`
+
+          messagesDivUser.appendChild(messageTextUser)
+          const messagesContainer = document.getElementById('messages')
+          const messagesContainer2 = document.getElementById('messagesContainer')
+          messagesContainer.appendChild(messagesDivUser)
+        })
+      }
+      const loadResponse = async () => {
         const messageDiv = document.getElementById("messages")
         messageDiv.innerText = ''
-
-        const dataUser = await axios.get('http://localhost:3000/loadMessage')
+        
         const dataChat = await axios.get('http://localhost:3000/loadResponse')
 
-        const messageChat = dataUser.data
-        const messageUser = dataChat.data
-        const messagesDivUser = document.createElement('div')
-        const messagesDivChat = document.createElement('div')
-        const messageTextUser = document.createElement('p')
+        const messageChat = dataChat.data
+        const messagesDivChat1 = document.createElement('div')
+        const messagesDivChat2 = document.createElement('div')
+        messagesDivChat1.className = 'chat-left'
+        messagesDivChat2.className = 'chat-content'
+
         const messageTextChat = document.createElement('p')
 
-        messagesDivUser.classList.add('user')
-        messageTextUser.innerText = `${messageUser}`
-        messagesDivChat.classList.add('chat')
+        messagesDivChat1.appendChild(messagesDivChat2)
+        messagesDivChat2.classList.add('chat')
         messageTextChat.innerText = `${messageChat}`
-        messagesDivUser.appendChild(messageTextUser)
-        messagesDivChat.appendChild(messageTextChat)
-        
+        messagesDivChat2.appendChild(messageTextChat)
+
         const messagesContainer = document.getElementById('messages')
         const messagesContainer2 = document.getElementById('messagesContainer')
-        messagesContainer.appendChild(messagesDivUser)
-        messagesContainer.appendChild(messagesDivChat)
-        messagesContainer2.scrollTop = messagesContainer.scrollHeight
+
+        messagesContainer.appendChild(messagesDivChat1)
       }
       window.sendMessage = sendMessage
     </script>
