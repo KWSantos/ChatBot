@@ -7,6 +7,9 @@ exports.getChat = ((req, res) => {
 })
 
 exports.getLoadResponse = ((req, res) => {
-    const loadResponse = chat.loadResponse()
-    res.status(200).send({message: loadResponse})
+    chat.loadResponse()
+    .then((resposta) => {
+        console.log(resposta)
+        res.send(resposta)
+    })
 })

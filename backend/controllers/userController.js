@@ -8,6 +8,8 @@ exports.postSendMessage = ((req, res) => {
 })
 
 exports.getLoadMessage = ((req, res) => {
-    const mensagem = user.loadMessage()
-    res.send(mensagem)
+    user.loadMessage()
+    .then((mensagem) => {
+        res.send(mensagem.mensagem)
+    })
 })

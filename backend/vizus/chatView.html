@@ -143,79 +143,74 @@
         })
         input.value = ''
       }
-      const loadUserMessage = async (message, messagesContainer) => {
-        const messagesDivUser = document.createElement('div')
-        const messageTextUser = document.createElement('p')
+      const messageHistory = [];
 
-        messagesDivUser.className = 'chat-content'
-        messagesDivUser.classList.add('user')
-        messageTextUser.innerText = `${message}`
-        messageTextUser.style.display = 'flex'
-        messageTextUser.style.justifyContent = 'flex-end'
-        messagesDivUser.appendChild(messageTextUser)
+    const loadMessage = async () => {
+        const messagesContainer = document.getElementById('messages');
 
-        messagesContainer.appendChild(messagesDivUser)
-        messagesContainer.scrollTop = messagesContainer.scrollHeight
-      }
+        try {
+            // Obter as mensagens do usuário e do chat
+            const responseUser = await axios.get('http://localhost:3000/loadMessage');
+            const responseChat = await axios.get('http://localhost:3000/loadResponse');
+            const messageUser = responseUser.data;
 
-      const loadChatMessage = async (message, messagesContainer) => {
-        const messagesDivChat = document.createElement('div')
-        const messageTextChat = document.createElement('p')
+            // Simular mensagem do chat
+            const messageChat = responseChat.data;
 
-        messagesDivChat.className = 'chat-left'
-        messagesDivChat.classList.add('chat')
-        messageTextChat.innerText = `${message}`
-        messageTextChat.style.display = 'flex'
-        messageTextChat.style.justifyContent = 'flex-start'
-        messagesDivChat.appendChild(messageTextChat)
+            // Adicionar mensagens ao histórico
+            messageHistory.push({ type: 'user', message: messageUser });
+            messageHistory.push({ type: 'chat', message: messageChat });
 
-        messagesContainer.appendChild(messagesDivChat)
-        messagesContainer.scrollTop = messagesContainer.scrollHeight
-      }
+            // Atualizar a div de mensagens
+            updateMessages(messagesContainer);
+        } catch (error) {
+            console.error('Erro ao carregar mensagens:', error);
+        }
+    };
 
-      const loadMessage = async () => {
-        const messageDiv = document.getElementById("messages")
-        messageDiv.innerText = ''
+    const updateMessages = (messagesContainer) => {
+        // Limpar a div de mensagens
+        messagesContainer.innerHTML = '';
 
-        const dataUser = await axios.get('http://localhost:3000/loadMessage')
-        const dataChat = await axios.get('http://localhost:3000/loadResponse')
+        // Adicionar mensagens do histórico à div
+        messageHistory.forEach((messageData) => {
+            if (messageData.type === 'user') {
+                const userMessagesContainer = createUserMessage(messageData.message);
+                messagesContainer.appendChild(userMessagesContainer);
+            } else if (messageData.type === 'chat') {
+                const chatMessagesContainer = createChatMessage(messageData.message);
+                messagesContainer.appendChild(chatMessagesContainer);
+            }
+        });
 
-        const messageChat = dataUser.data
-        const messageUser = dataChat.data
+        // Rolar para o final da div
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
 
-        const messagesContainer = document.getElementById('messages')
-        loadUserMessage(messageUser, messagesContainer)
-        loadChatMessage(messageChat, messagesContainer)
-      }
+    const createUserMessage = (message) => {
+        const messagesDivUser = document.createElement('div');
+        const messageTextUser = document.createElement('p');
 
+        messagesDivUser.className = 'chat-content user';
+        messageTextUser.innerText = `${message}`;
+        messagesDivUser.appendChild(messageTextUser);
 
+        return messagesDivUser;
+    };
 
+    const createChatMessage = (message) => {
+        const messagesDivChat = document.createElement('div');
+        const messagesDivChat1 = document.createElement('div');
+        const messageTextChat = document.createElement('p');
 
-      const loadResponse = async () => {
-        const messageDiv = document.getElementById("messages")
-        messageDiv.innerText = ''
-        
-        const dataChat = await axios.get('http://localhost:3000/loadResponse')
+        messagesDivChat.className = 'chat-left';
+        messagesDivChat1.className = 'chat-content';
+        messageTextChat.innerText = `${message}`;
+        messagesDivChat1.appendChild(messageTextChat);
+        messagesDivChat.appendChild(messagesDivChat1)
 
-        const messageChat = dataChat.data
-        const messagesDivChat1 = document.createElement('div')
-        const messagesDivChat2 = document.createElement('div')
-        messagesDivChat1.className = 'chat-left'
-        messagesDivChat2.className = 'chat-content'
-
-        const messageTextChat = document.createElement('p')
-
-        messagesDivChat1.appendChild(messagesDivChat2)
-        messagesDivChat2.classList.add('chat')
-        messageTextChat.innerText = `${messageChat}`
-        messagesDivChat2.appendChild(messageTextChat)
-
-        const messagesContainer = document.getElementById('messages')
-        const messagesContainer2 = document.getElementById('messagesContainer')
-
-        messagesContainer.appendChild(messagesDivChat1)
-      }
-
+        return messagesDivChat;
+    };
       
       window.sendMessage = sendMessage
     </script>

@@ -9,9 +9,10 @@ nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 import tensorflow as tf
+from flask_cors import CORS
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents_ana.json').read())
+intents = json.loads(open('intents.json').read())
 
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
@@ -53,12 +54,12 @@ def get_response(lista, jsons):
     return result
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/data', methods=['POST'])
 def get_data():
     data = request.json
     message = data['message']
-    print(message)
     ints = predict(message)
     response = get_response(ints, intents)
     return jsonify({'response': response})

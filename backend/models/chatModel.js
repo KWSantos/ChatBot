@@ -1,22 +1,24 @@
 const axios = require("axios")
 const app = require('../services/configFirebase')
-const { getDatabase, ref,  onChildAdded } = require('firebase/database')
+const { getDatabase, ref, onValue, orderByChild, limitToLast,query } = require('firebase/database')
 
 class chatModel {
-    loadResponse(){
+    async loadResponse(){
         const db = getDatabase(app)
         const refMessages = ref(db, 'messages/')
-        
+        const query1 = query(refMessages, orderByChild('timestamp'), limitToLast(1))
+
         return new Promise((resolve, reject) => {
-            onChildAdded(refMessages, (snapshot) => {
-                const messages = snapshot.val().mensagem
-                const response = axios.post('http://localhost:5000/data', {
-                    message: messages
+            onValue(query1, async (snapshot) => {
+                const message = snapshot.val()
+                const lastMessage = Object.values(message)[0].mensagem
+                const response = await axios.post('http://localhost:5000/data', {
+                    message: lastMessage
                 })
                 resolve(response.data.response)
-            }, (error) => {
-                reject(error)
-            })
+            }, {
+                onlyOnce: true,
+            });
         })
     }  
 }
