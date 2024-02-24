@@ -6,7 +6,7 @@
   },
   {"tag": "despedida",
    "patterns": ["Tchau", "Ate mais", "abracos", "Adeus"],
-   "responses": ["Até mais, obrigado!", "Tenha um otimo dia!", "Atè, um abraço."]
+   "responses": ["Ate mais, obrigado!", "Tenha um otimo dia!", "Ate, um abraço."]
   },
   {"tag": "agradecimento",
    "patterns": ["Obrigado", "Obrigado pela ajuda", "Muito obrgado","Voce me ajudou", "valeu", "beijos lindo"],
@@ -25,12 +25,12 @@
    "responses": ["Você pode encontrar os editais neste link: https://www3.unicentro.br/?s=editais.", "Claro, aqui está o link para a pesquisa 'editais': https://www3.unicentro.br/?s=editais"]
   },
   {"tag": "iniciacaoCientifica",
-   "patterns": ["Onde tenho acesso as informações sobre Iniciação cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?" ],
-   "responses": ["Voce pode encontrar mais informações sobre Iniciação Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
+   "patterns": ["Onde tenho acesso as informações sobre Iniciaçao cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?" ],
+   "responses": ["Voce pode encontrar mais informações sobre Iniciaçao Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
   },
   {
     "tag": "informacoes_cursos",
-    "patterns": ["Quais cursos vocês oferecem?", "Quais são os cursos disponíveis?", "Quero informações sobre os cursos"],
+    "patterns": ["Quais cursos vocês oferecem?", "Quais sao os cursos disponíveis?", "Quero informações sobre os cursos"],
     "response": ["Oferecemos uma ampla gama de cursos em áreas como Engenharia, Medicina, Humanidades e muito mais. Você pode encontrar mais detalhes em nosso site oficial."]
   },
   {
@@ -40,17 +40,17 @@
   },
   {
     "tag": "informacoes_matricula",
-    "patterns": ["Como faço para me matricular?", "Quais são os requisitos de matrícula?", "Quero informações sobre o processo de matrícula"],
+    "patterns": ["Como faço para me matricular?", "Quais sao os requisitos de matrícula?", "Quero informações sobre o processo de matrícula"],
     "response": ["Para informações sobre matrícula, requisitos e prazos, visite nosso portal de admissões em nosso site oficial. Lá você encontrará todos os detalhes necessários."]
   },
   {
     "tag": "informacoes_eventos",
-    "patterns": ["Quais eventos estão acontecendo na universidade?", "Como posso participar dos eventos?", "Quero informações sobre os próximos eventos"],
-    "response": ["Mantenha-se atualizado sobre todos os eventos atuais e futuros visitando a seção de eventos em nosso site oficial. Lá você encontrará detalhes sobre como participar de cada evento."]
+    "patterns": ["Quais eventos estao acontecendo na universidade?", "Como posso participar dos eventos?", "Quero informações sobre os próximos eventos"],
+    "response": ["Mantenha-se atualizado sobre todos os eventos atuais e futuros visitando a seçao de eventos em nosso site oficial. Lá você encontrará detalhes sobre como participar de cada evento."]
   },
   {
     "tag": "contato_atendimento",
-    "patterns": ["Preciso falar com alguém da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade"],
+    "patterns": ["Preciso falar com alguem da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade"],
     "response": ["Você pode entrar em contato com nosso atendimento ao aluno ligando para o número 123-456-7890 ou enviando um e-mail para [email protegido]. Teremos prazer em ajudar."]
   },
   {
@@ -60,22 +60,22 @@
   },
   {
     "tag": "editais_corae",
-    "patterns": ["Quais são os editais atuais da COOREA?", "Onde posso encontrar informações sobre os serviços oferecidos pela COOREA?","Como faço para me inscrever nos programas de apoio ao estudante da COOREA?"],
+    "patterns": ["Quais sao os editais atuais da COOREA?", "Onde posso encontrar informações sobre os serviços oferecidos pela COOREA?","Como faço para me inscrever nos programas de apoio ao estudante da COOREA?"],
     "response": ["Para mais informações acesse: https://www3.unicentro.br/apoioaoestudante/editais/"]
   },
   {
     "tag": "editais_especializacao",
-    "patterns": ["Quais são as especializações oferecidas atualmente?", "Onde posso encontrar informações sobre os requisitos para participar de uma especialização?", "Quando geralmente são divulgados os editais para novas especializações?"],
+    "patterns": ["Quais sao as especializações oferecidas atualmente?", "Onde posso encontrar informações sobre os requisitos para participar de uma especializaçao?", "Quando geralmente sao divulgados os editais para novas especializações?"],
     "response": ["Para mais informações acesse: https://www3.unicentro.br/especializacao/editais/"]
   },
   {
     "tag": "editais_proec",
-    "patterns": [ "Quais são os editais abertos pela PROEC atualmente?","Como posso participar de projetos de extensão oferecidos pela PROEC?", "Onde encontro informações sobre os prazos de inscrição para os editais da PROEC?"],
+    "patterns": [ "Quais sao os editais abertos pela PROEC atualmente?","Como posso participar de projetos de extensao oferecidos pela PROEC?", "Onde encontro informações sobre os prazos de inscriçao para os editais da PROEC?"],
     "response": ["Para mais informações acesse: https://www3.unicentro.br/proec/category/todos-os-editais/"]
   },
   {
     "tag": "editais_proen",
-    "patterns": [ "Quais são os editais abertos pela PROEN neste semestre?","Como posso obter informações sobre os processos seletivos da PROEN?","Quais são os requisitos para participar de programas de ensino oferecidos pela PROEN?"],
+    "patterns": [ "Quais sao os editais abertos pela PROEN neste semestre?","Como posso obter informações sobre os processos seletivos da PROEN?","Quais sao os requisitos para participar de programas de ensino oferecidos pela PROEN?"],
     "response": ["Para mais informações acesse: https://www3.unicentro.br/proen/editais/"]
   }
 ]
