@@ -23,4 +23,21 @@ class chatModel {
     }  
 }
 
+// import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
+// const storage = getStorage();
+// const fileRef = ref(storage, "path/to/your/file.pdf");
+
+// getDownloadURL(fileRef)
+//   .then((url) => {
+//     const link = document.createElement("a");
+//     link.href = url;
+//     link.download = "file.pdf"; // Set the file name here
+//     link.click();
+//   })
+//   .catch((error) => {
+//     console.error("Error downloading file:", error);
+//   });
+
+
 module.exports = chatModel
