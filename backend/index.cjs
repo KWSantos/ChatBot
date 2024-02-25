@@ -8,7 +8,7 @@ app.use(body.json())
 const chatRouter = require('./routes/chatRoute.js')
 const userRouter = require('./routes/userRoute.js')
 
-app.use(express.static(path.join('C:/Users/kaues/Documents/ChatBot/backend', 'views')))
+app.use(express.static(path.join('C:/Users/kaues/Documents/ChatBot/backend', 'vizus')))
 
 app.use(chatRouter)
 app.use(userRouter)

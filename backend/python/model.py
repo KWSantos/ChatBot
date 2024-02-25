@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 import json
 import pickle
@@ -10,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
 
-intents = json.loads(open('intents_ana.json').read())
+intents = json.loads(open('intents.json').read())
 
 words = []
 classes = []

@@ -9,7 +9,7 @@ exports.postSendMessage = ((req, res) => {
 
 exports.getLoadMessage = ((req, res) => {
     user.loadMessage()
-    .then(message => {
-        res.send(message)
+    .then((mensagem) => {
+        res.send(mensagem.mensagem)
     })
 })
