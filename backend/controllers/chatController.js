@@ -9,7 +9,6 @@ exports.getChat = ((req, res) => {
 exports.getLoadResponse = ((req, res) => {
     chat.loadResponse()
     .then((resposta) => {
-        console.log(resposta)
         res.send(resposta)
     })
 })

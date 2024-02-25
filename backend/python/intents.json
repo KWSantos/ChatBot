@@ -1,82 +1,158 @@
 {"intents": [
   {"tag": "saudacao",
-   "patterns": ["Oi", "Ola", "Oi tudo bem:", "Tem alguem ai?", "Pode me ajudar"],
+   "patterns": ["Oi", "Ola", "Oi tudo bem:", "Tem alguem ai?", "Pode me ajudar", "E ai?", "Tudo tranquilo?", "Como vai você?", "Boa tarde!", "Bom dia!", "Boa noite!", "E ai, tudo certo?", "Ola, tudo bem?", "Opa, tudo bem por ai?", "Hey, como você esta?", "Saudacões!", "Como estão as coisas?", "Aoba", "E ai, beleza?", "Oi, tudo bom contigo?", "Que prazer te ver por aqui!", "Saudacões cordiais!", "Como esta o seu dia?", "Oiiee!" ],
    "responses": ["Oi tudo bem e voce ?", "Ola, como posso te ajudar ?", "Oi, como podemos te ajudar?", "Coe, como posso ajudar?"],
    "context_set": ""
   },
   {"tag": "despedida",
-   "patterns": ["Tchau", "Ate mais", "abracos", "Adeus"],
+   "patterns": ["Tchau", "Ate mais", "abracos", "Adeus", "Até logo!", "Até breve!", "Até a próxima!", "Tchauzinho!", "Até logo mais!", "Nos vemos em breve!", "Adeusinho!", "Até mais tarde!", "Até a próxima vez!", "Até mais, então!", "Fique bem!", "Valeu pela conversa!", "Tchau, até a próxima oportunidade!", "Adeus, até algum dia!", "Que tudo corra bem para você!", "Fique em seguranca!" ],
    "responses": ["Ate mais, obrigado!", "Tenha um otimo dia!", "Ate, um abraco."]
   },
   {"tag": "agradecimento",
-   "patterns": ["Obrigado", "Obrigado pela ajuda", "Muito obrgado","Voce me ajudou", "valeu", "beijos lindo"],
+   "patterns": ["Obrigado", "Obrigado pela ajuda", "Muito obrigado","Voce me ajudou", "valeu", "beijos lindo", "Obrigado pelo apoio!", "Agradeco pela assistência!", "Obrigado por tudo!", "Agradeco de coracão!", "Muito obrigado pela ajuda!", "Obrigado pela gentileza!", "Agradecido pela sua colaboracão!", "Agradeco imensamente!", "Muito obrigado pela sua atencão!", "Obrigado por ter me ajudado!", "Agradeco de todo o coracão!", "Agradeco por sua compreensão!", "Obrigado por seu apoio inestimavel!" ],
    "responses": ["De nada!", "Fico feliz em ajudar!", "Disponha", "Por nada!", "Que isso, nao foi nada!"]
   },
   {"tag": "horarioAluno",
-   "patterns": ["Gostaria de saber sobre horarios das aulas?", "As aulas comecam que horas?", "Qual o horario de aula", "em que horario tenho aula hoje"],
-   "responses": ["Claro, estes sao os seus horarios: https://graduacao.unicentro.br/aonline/default.asp", "Seus horarios estao aqui: https://graduacao.unicentro.br/aonline/default.asp"]
+   "patterns": ["Gostaria de saber sobre horarios das aulas?", "As aulas comecam que horas?", "Qual o horario de aula", "em que horario tenho aula hoje", "Pode me informar sobre os horarios das aulas?", "A que horas comecam as aulas?", "Qual é o cronograma das aulas?", "Gostaria de saber os horarios das minhas aulas.", "Quando é o horario de inicio das aulas?", "Em que horas devo comparecer às aulas?", "Quais são os horarios das turmas", "Como posso acessar os horarios das minhas aulas?", "Poderia me dizer os horarios de cada disciplina?", "Estou procurando pelos horarios de aula, pode me ajudar?"],
+   "responses": ["Claro, estes sao os seus horarios: https://graduacao.unicentro.br/aonline/default.asp", "Seus horarios estao aqui: https://graduacao.unicentro.br/aonline/default.asp", "Aqui estao seus horarios de hoje: "]
   },
   {"tag": "horarioCampus",
-   "patterns": ["Gostaria de saber sobre horarios do campus?", "em que horas o campus atende?", "Qual o horario de atendimento"],
+   "patterns": ["Gostaria de saber sobre horarios do campus?", "em que horas o campus atende?", "Qual o horario de atendimento", "Pode me informar sobre os horarios de funcionamento do campus?", "A que horas o campus esta aberto?", "Quais são os horarios de atendimento do campus?", "Gostaria de saber os horarios de funcionamento do campus.", "Quando é que o campus abre e fecha?", "Em que horas posso encontrar o campus aberto?", "Quais são os horarios de acesso ao campus?", "Como posso saber os horarios de funcionamento do campus?", "Poderia me informar sobre os horarios de atendimento do campus?", "Estou procurando pelos horarios de funcionamento do campus, pode me ajudar?" ],
    "responses": ["Claro, o campus fica aberto das 8:00 ate as 22:00, com pausa para o almoco", "Você pode ser atendido em qualquer horario entre 8:00 e 22:00, com pausa para o almoco entre 12:00 e 13:00"]
   },
   {"tag": "editais",
-   "patterns": ["Onde posso encontrar informacões sobre editais?", "Qual a aba do site para editais?", "Onde ficam os editais?" ],
+   "patterns": ["Onde posso encontrar informacões sobre editais?", "Qual a aba do site para editais?", "Onde ficam os editais?", "Como posso acessar informacões sobre os editais?", "Onde posso encontrar os documentos de editais?", "Qual é a secão do site dedicada aos editais?", "Onde posso obter informacões sobre os editais em vigor?", "Em que parte do site estão disponiveis os editais?", "Como faco para acessar os editais atualizados?", "Onde estão localizados os anúncios de editais?", "Qual é o caminho para encontrar os editais online?", "Onde devo procurar por informacões especificas nos editais?", "Como posso verificar os editais disponiveis para consulta?" ],
    "responses": ["Você pode encontrar os editais neste link: https://www3.unicentro.br/?s=editais.", "Claro, aqui esta o link para a pesquisa 'editais': https://www3.unicentro.br/?s=editais"]
   },
   {"tag": "iniciacaoCientifica",
-   "patterns": ["Onde tenho acesso as informacões sobre Iniciacao cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?" ],
+   "patterns": ["Onde tenho acesso as informacões sobre Iniciacao cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?", "Onde posso encontrar informacões sobre iniciacão cientifica?", "Onde encontro detalhes sobre a iniciacão cientifica?", "Como posso acessar informacões relacionadas à IC?", "Onde posso obter mais detalhes sobre a iniciacão cientifica?", "Como faco para saber mais sobre o programa de iniciacão cientifica?", "Onde estão disponiveis informacões sobre iniciacão cientifica?", "Como posso acessar recursos sobre iniciacão cientifica?", "Onde posso encontrar orientacões sobre iniciacão cientifica?", "Onde devo procurar para saber sobre oportunidades de iniciacão cientifica?", "Como posso me informar melhor sobre o programa de iniciacão cientifica?" ],
    "responses": ["Voce pode encontrar mais informacões sobre Iniciacao Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
   },
   {
     "tag": "informacoes_cursos",
-    "patterns": ["Quais cursos vocês oferecem?", "Quais sao os cursos disponiveis?", "Quero informacões sobre os cursos"],
+    "patterns": ["Quais cursos vocês oferecem?", "Quais sao os cursos disponiveis?", "Quero informacões sobre os cursos", "Quais são as opcões de cursos oferecidos?", "Quais cursos estão disponiveis para inscricão?", "Poderia me informar sobre os cursos disponiveis?", "Quais são os cursos atualmente oferecidos?", "Onde posso encontrar detalhes sobre os cursos oferecidos?", "Como faco para obter informacões sobre os cursos disponiveis?", "Quais são os cursos que posso me inscrever?", "Como posso saber mais sobre os cursos que vocês oferecem?", "Quais opcões de cursos estão abertas no momento?", "Gostaria de conhecer mais detalhes sobre os cursos disponiveis."],
     "response": ["Oferecemos uma ampla gama de cursos em areas como Engenharia, Medicina, Humanidades e muito mais. Você pode encontrar mais detalhes em nosso site oficial."]
   },
   {
     "tag": "suporte_academico",
-    "patterns": ["Preciso de ajuda com meu curso", "Estou com dificuldades acadêmicas", "Como posso obter suporte acadêmico?"],
+    "patterns": ["Preciso de ajuda com meu curso", "Estou com dificuldades acadêmicas", "Como posso obter suporte acadêmico?", "Estou precisando de auxilio com meu curso, como posso conseguir?", "Estou enfrentando desafios acadêmicos, como posso receber ajuda?", "Onde posso buscar suporte para questões acadêmicas?", "Como faco para encontrar suporte para meu desempenho acadêmico?", "Preciso de assistência com meu curso, como devo proceder?", "Estou com dificuldades nos estudos, onde posso encontrar ajuda acadêmica?", "Como posso obter suporte para lidar com minhas dificuldades acadêmicas?", "Quero saber como posso receber apoio para melhorar meu desempenho acadêmico.", "Estou com dificuldades em algumas disciplinas, onde posso encontrar suporte?", "Gostaria de receber orientacões sobre como superar minhas dificuldades acadêmicas."],
     "response": ["Você pode entrar em contato com o departamento acadêmico pelo e-mail [email protegido] ou visitar nosso centro de suporte acadêmico no campus para obter ajuda personalizada."]
   },
   {
     "tag": "informacoes_matricula",
-    "patterns": ["Como faco para me matricular?", "Quais sao os requisitos de matricula?", "Quero informacões sobre o processo de matricula"],
+    "patterns": ["Como faco para me matricular?", "Quais sao os requisitos de matricula?", "Quero informacões sobre o processo de matricula", "Como devo proceder para realizar minha matricula?", "Quais passos devo seguir para me matricular?", "Quais são os procedimentos necessarios para efetuar a matricula?", "Onde posso encontrar informacões sobre o processo de matricula?", "Como faco para me inscrever nos cursos?", "Quais documentos são necessarios para efetuar a matricula?", "Estou interessado em me matricular, quais são os próximos passos?", "Quero saber mais sobre os requisitos para a matricula, onde posso encontrar essas informacões?", "Quais são as etapas do processo de matricula?", "Como posso me informar sobre os prazos e procedimentos de matricula?"],
     "response": ["Para informacões sobre matricula, requisitos e prazos, visite nosso portal de admissões em nosso site oficial. La você encontrara todos os detalhes necessarios."]
   },
   {
     "tag": "informacoes_eventos",
-    "patterns": ["Quais eventos estao acontecendo na universidade?", "Como posso participar dos eventos?", "Quero informacões sobre os próximos eventos"],
+    "patterns": ["Quais eventos estao acontecendo na universidade?", "Como posso participar dos eventos?", "Quero informacões sobre os próximos eventos", "Quais são os eventos programados na universidade?", "Onde posso encontrar informacões sobre os eventos em andamento?", "Como faco para me envolver nos eventos que estão ocorrendo?", "Quais são as opcões de eventos disponiveis para participar?", "Como posso participar dos eventos que estão sendo organizados?", "Onde posso obter detalhes sobre os eventos universitarios?", "Estou interessado em participar de eventos, como posso fazer isso?", "Quais são as próximas atividades ou eventos na universidade?", "Como posso me informar sobre os eventos que serão realizados em breve?", "Gostaria de saber quais são os eventos futuros, onde posso encontrar essas informacões?"],
     "response": ["Mantenha-se atualizado sobre todos os eventos atuais e futuros visitando a secao de eventos em nosso site oficial. La você encontrara detalhes sobre como participar de cada evento."]
   },
   {
     "tag": "contato_atendimento",
-    "patterns": ["Preciso falar com alguem da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade"],
+    "patterns": ["Preciso falar com alguem da universidade", "Como entro em contato com o atendimento ao aluno?", "Quero falar com um representante da universidade", "Estou buscando entrar em contato com alguém da universidade, como posso fazer isso?", "Como posso me comunicar com o servico de atendimento ao aluno da universidade?", "Quais são os canais disponiveis para entrar em contato com um representante da universidade?", "Preciso de assistência e gostaria de saber como posso contatar alguém na universidade.", "Como faco para falar com um representante ou funcionario da universidade?", "Estou com dúvidas e gostaria de saber como posso entrar em contato com a equipe de atendimento da universidade.", "Quero entrar em contato com alguém que possa me ajudar na universidade, como devo proceder?", "Onde posso encontrar informacões sobre os canais de contato com a universidade?", "Como posso conseguir suporte por meio do atendimento ao aluno da universidade?", "Gostaria de saber como posso entrar em contato com um representante para obter informacões sobre a universidade."],
     "response": ["Você pode entrar em contato com nosso atendimento ao aluno ligando para o número 123-456-7890 ou enviando um e-mail para [email protegido]. Teremos prazer em ajudar."]
   },
   {
     "tag": "apoio_psicologico",
-    "patterns": ["Apoio psicológico", "Onde posso encontrar ajuda emocional?", "Servicos de aconselhamento","Estou triste, pode me ajudar?", "Me sinto ansiosa", "Me sinto depressiva"],
+    "patterns": ["Apoio psicológico", "Onde posso encontrar ajuda emocional?", "Servicos de aconselhamento","Estou triste, pode me ajudar?", "Me sinto ansiosa", "Me sinto depressiva", "Preciso de apoio psicológico, como posso conseguir?", "Onde posso encontrar assistência para questões emocionais?", "Como faco para acessar servicos de aconselhamento psicológico?", "Estou enfrentando tristeza, você pode me fornecer algum suporte?", "Estou passando por ansiedade, onde posso encontrar ajuda?", "Sinto-me deprimido(a), como posso obter apoio psicológico?", "Quais são os recursos disponiveis para lidar com problemas emocionais?", "Como posso encontrar orientacão para lidar com meus sentimentos?", "Estou buscando ajuda para questões emocionais, onde devo ir?", "Gostaria de saber como posso obter apoio para problemas psicológicos."],
     "response": ["Você pode entrar em contato com nosso atendimento ao aluno COORAE ligando ou mandando mensagem para o número (42)98824-0655. Teremos prazer em ajudar."]
   },
   {
     "tag": "editais_corae",
-    "patterns": ["Quais sao os editais atuais da COOREA?", "Onde posso encontrar informacões sobre os servicos oferecidos pela COOREA?","Como faco para me inscrever nos programas de apoio ao estudante da COOREA?"],
+    "patterns": ["Quais sao os editais atuais da COOREA?", "Onde posso encontrar informacões sobre os servicos oferecidos pela COOREA?","Como faco para me inscrever nos programas de apoio ao estudante da COOREA?", "Onde posso encontrar os editais mais recentes da COOREA?", "Quais são os editais atualmente disponiveis na COOREA?", "Como faco para acessar informacões sobre os servicos oferecidos pela COOREA?", "Onde posso obter detalhes sobre os programas de apoio ao estudante da COOREA?", "Quais são os servicos disponibilizados pela COOREA e onde posso encontra-los?", "Como faco para me inscrever nos programas de apoio ao estudante oferecidos pela COOREA?", "Estou interessado em participar dos programas de apoio ao estudante da COOREA, como posso me inscrever?", "Onde encontro os formularios de inscricão para os programas de apoio ao estudante da COOREA?", "Quais são os requisitos para participar dos programas de apoio ao estudante da COOREA?", "Como posso me informar sobre os critérios de selecão dos programas de apoio ao estudante da COOREA?" ],
     "response": ["Para mais informacões acesse: https://www3.unicentro.br/apoioaoestudante/editais/"]
   },
   {
     "tag": "editais_especializacao",
-    "patterns": ["Quais sao as especializacões oferecidas atualmente?", "Onde posso encontrar informacões sobre os requisitos para participar de uma especializacao?", "Quando geralmente sao divulgados os editais para novas especializacões?"],
+    "patterns": ["Quais sao as especializacões oferecidas atualmente?", "Onde posso encontrar informacões sobre os requisitos para participar de uma especializacao?", "Quando geralmente sao divulgados os editais para novas especializacões?", "Quais especializacões estão sendo oferecidas atualmente?", "Onde posso encontrar detalhes sobre os requisitos para participar de uma especializacão?", "Quando costumam ser divulgados os editais para novas especializacões?", "Quais são as opcões de especializacão disponiveis no momento?", "Onde posso obter informacões sobre os critérios de elegibilidade para especializacões?", "Como faco para acessar os requisitos de inscricão para as especializacões oferecidas?", "Estou interessado em uma especializacão, onde posso encontrar os detalhes necessarios?", "Quando devo esperar os anúncios para novas especializacões?", "Onde posso encontrar os prazos e procedimentos para as inscricões em especializacões?", "Gostaria de saber mais sobre as especializacões disponiveis e os requisitos para participar."],
     "response": ["Para mais informacões acesse: https://www3.unicentro.br/especializacao/editais/"]
   },
   {
     "tag": "editais_proec",
-    "patterns": [ "Quais sao os editais abertos pela PROEC atualmente?","Como posso participar de projetos de extensao oferecidos pela PROEC?", "Onde encontro informacões sobre os prazos de inscricao para os editais da PROEC?"],
+    "patterns": [ "Quais sao os editais abertos pela PROEC atualmente?","Como posso participar de projetos de extensao oferecidos pela PROEC?", "Onde encontro informacões sobre os prazos de inscricao para os editais da PROEC?", "Quais são os editais atualmente abertos pela PROEC?", "Onde posso encontrar informacões sobre os projetos de extensão oferecidos pela PROEC e como participar deles?", "Como faco para me envolver nos projetos de extensão oferecidos pela PROEC?", "Quais são as oportunidades de participacão em projetos de extensão promovidos pela PROEC?", "Onde posso obter detalhes sobre os projetos de extensão da PROEC e como me candidatar?", "Como posso participar dos projetos de extensão divulgados pela PROEC?", "Estou interessado em participar de projetos de extensão, onde posso encontrar informacões relevantes?", "Quais são os procedimentos para participar dos editais divulgados pela PROEC?", "Onde encontro informacões sobre os prazos de inscricão para os editais da PROEC?", "Como posso saber os prazos de inscricão para as oportunidades oferecidas pela PROEC?"],
     "response": ["Para mais informacões acesse: https://www3.unicentro.br/proec/category/todos-os-editais/"]
   },
   {
     "tag": "editais_proen",
-    "patterns": [ "Quais sao os editais abertos pela PROEN neste semestre?","Como posso obter informacões sobre os processos seletivos da PROEN?","Quais sao os requisitos para participar de programas de ensino oferecidos pela PROEN?"],
+    "patterns": [ "Quais sao os editais abertos pela PROEN neste semestre?","Como posso obter informacões sobre os processos seletivos da PROEN?","Quais sao os requisitos para participar de programas de ensino oferecidos pela PROEN?", "Quais são os editais atualmente abertos pela PROEC?", "Onde posso encontrar informacões sobre os projetos de extensão oferecidos pela PROEC e como participar deles", "Como faco para me envolver nos projetos de extensão oferecidos pela PROEC?", "Quais são as oportunidades de participacão em projetos de extensão promovidos pela PROEC?", "Onde posso obter detalhes sobre os projetos de extensão da PROEC e como me candidatar?", "Como posso participar dos projetos de extensão divulgados pela PROEC?", "Estou interessado em participar de projetos de extensão, onde posso encontrar informacões relevantes?", "Quais são os procedimentos para participar dos editais divulgados pela PROEC", "Onde encontro informacões sobre os prazos de inscricão para os editais da PROEC?", "Como posso saber os prazos de inscricão para as oportunidades oferecidas pela PROEC?"],
     "response": ["Para mais informacões acesse: https://www3.unicentro.br/proen/editais/"]
+  }, 
+  {
+    "tag": "localizacao_decomp",
+    "patterns": ["Como posso chegar no DECOMP?", "Onde fica o DECOMP?", "Qual é a localizacão do DECOMP?", "Como encontro o departamento da Computacão?", "Preciso ir ao DECOMP, onde fica?", "Estou procurando pelo prédio do DECOMP, pode me ajudar?", "Quais são as instrucões para chegar ao DECOMP?", "Como faco para encontrar o DECOMP no campus?", "O DECOMP esta em qual prédio?", "Estou perdido(a), como posso encontrar o DECOMP?"],
+    "response": ["Este e o caminho do centrinho ate o DECOMP: "]
+  },
+  {
+  "tag": "localizacao_ginasio_cedeteg",
+  "patterns": ["Como posso chegar ao ginasio de esportes do CEDETEG?", "Onde fica o ginasio de esportes do CEDETEG?", "Qual é a localizacão exata do ginasio de esportes?", "Estou procurando pelo ginasio de esportes do CEDETEG, você pode me ajudar?", "Quais são as instrucões para encontrar o ginasio de esportes?", "Como faco para chegar ao ginasio de esportes do CEDETEG?", "O ginasio de esportes do CEDETEG esta em qual prédio?", "Estou perdido(a), como posso encontrar o ginasio de esportes?"],
+  "response": []
+  }, 
+  {
+  "tag": "localizacao_farmacia_escola",
+  "patterns": ["Onde fica a farmacia escola?", "Como posso encontrar a farmacia escola?", "Qual é a localizacão da farmacia escola?", "Estou procurando pela farmacia escola, você sabe onde fica?", "Quais são as direcões para chegar à farmacia escola?", "Como chegar à farmacia escola?", "Em qual prédio esta localizada a farmacia escola?", "Estou com dificuldades para encontrar a farmacia escola, pode me ajudar?"],
+  "response": []
+  },
+  {
+  "tag": "localizacao_farmacia_escola",
+  "patterns": ["Onde fica a farmacia escola?", "Como posso encontrar a farmacia escola?", "Qual é a localizacão da farmacia escola?", "Estou procurando pela farmacia escola, você sabe onde fica?", "Quais são as direcões para chegar à farmacia escola?", "Como chegar à farmacia escola?", "Em qual prédio esta localizada a farmacia escola?", "Estou com dificuldades para encontrar a farmacia escola, pode me ajudar?"],
+  "response": []
+  },
+  {
+    "tag": "localizacao_centrinho_cedeteg",
+    "patterns": ["Onde fica o centrinho do CEDETEG?", "Como posso encontrar o centrinho do CEDETEG?", "Qual é a localizacão exata do centrinho do CEDETEG?", "Estou procurando pelo centrinho do CEDETEG, você pode me ajudar?", "Quais são as instrucões para encontrar o centrinho do CEDETEG?", "Como chegar ao centrinho do CEDETEG?", "O centrinho do CEDETEG esta em qual prédio?", "Estou com dificuldades para encontrar o centrinho do CEDETEG, pode me ajudar?"],
+    "response": []
+  },
+  {
+    "tag": "localizacao_bloco_1",
+    "patterns": ["Onde fica o Bloco 1?", "Como posso encontrar o Bloco 1?", "Qual é a localizacão do Bloco 1?", "Onde posso encontrar o prédio Bloco 1?", "Estou procurando pelo Bloco 1, você pode me ajudar?", "Como chegar ao Bloco 1?"],
+    "response": []
+  },
+  {
+    "tag": "localizacao_bloco_2",
+    "patterns": ["Onde fica o Bloco 2?", "Como posso encontrar o Bloco 2?", "Qual é a localizacão do Bloco 2?", "Onde posso encontrar o prédio Bloco 2?", "Estou procurando pelo Bloco 2, você pode me ajudar?", "Como chegar ao Bloco 2?"],
+    "response": []
+  },
+  {
+    "tag": "localizacao_bloco_7",
+    "patterns": ["Onde fica o Bloco 7?", "Como posso encontrar o Bloco 7?", "Qual é a localizacão do Bloco 7?", "Onde posso encontrar o prédio Bloco 7?", "Estou procurando pelo Bloco 7, você pode me ajudar?", "Como chegar ao Bloco 7?"],
+    "response": []
+  },
+  {
+    "tag": "localizacao_bloco_6",
+    "patterns": ["Onde fica o Bloco 6?", "Como posso encontrar o Bloco 6?", "Qual é a localizacão do Bloco 6?", "Onde posso encontrar o prédio Bloco 6?", "Estou procurando pelo Bloco 6, você pode me ajudar?", "Como chegar ao Bloco 6?"],
+    "response": []
+  },
+  {
+    "tag": "localizacao_lab_eng_alimentos",
+    "patterns": ["Onde fica o laboratório de Engenharia de Alimentos?", "Como posso encontrar o laboratório de Engenharia de Alimentos?", "Qual é a localizacão do laboratório de Engenharia de Alimentos?", "Onde posso encontrar o laboratório especifico de Engenharia de Alimentos?", "Estou procurando pelo laboratório de Engenharia de Alimentos, você pode me ajudar?", "Como chegar ao laboratório de Engenharia de Alimentos?"],
+    "response": []
+  },
+  {
+    "tag": "informacoes_estagios",
+    "patterns": ["Onde encontro informacões sobre estagios?", "Como posso obter detalhes sobre oportunidades de estagio?", "Quais são as fontes de informacão sobre estagios?", "Estou procurando por informacões sobre estagios, onde devo buscar?", "Como faco para encontrar oportunidades de estagio?", "Quero saber mais sobre estagios, onde posso encontrar recursos?", "Quais são os canais para encontrar estagios?", "Onde posso obter orientacões sobre estagios?", "Estou interessado(a) em estagios, como posso comecar minha pesquisa?", "Quais são as maneiras de encontrar estagios disponiveis?"],
+    "response": []
+  },
+  {
+    "tag": "acesso_recursos_online_biblioteca",
+    "patterns": ["Como faco para acessar os recursos online da biblioteca?", "Onde posso encontrar os recursos online da biblioteca?", "Quais são os passos para acessar os recursos online da biblioteca?", "Estou procurando por recursos online da biblioteca, como posso encontra-los?", "Como posso acessar os materiais digitais da biblioteca?", "Quais são as opcões para acessar os recursos digitais da biblioteca?", "Como acessar o acervo online da biblioteca?", "Preciso de ajuda para encontrar os recursos online da biblioteca, você pode me ajudar?"],
+    "response": []
+  },
+  {
+    "tag": "acesso_grade_curricular",
+    "patterns": ["Como posso acessar minha grade curricular?", "Onde posso encontrar informacões sobre minha grade curricular?", "Quais são os passos para acessar minha grade curricular?", "Estou procurando por minha grade curricular, como posso encontra-la?", "Como posso visualizar minha grade curricular?", "Quais são as opcões para acessar minha grade curricular?", "Como posso verificar os cursos e disciplinas em minha grade curricular?", "Preciso de ajuda para encontrar minha grade curricular, você pode me ajudar?"],
+    "response": []
+    },
+  {
+    "tag": "informacoes_praticas_esportivas",
+    "patterns": ["Onde posso encontrar informacões sobre praticas esportivas na universidade?", "Como posso saber mais sobre as atividades esportivas oferecidas pela universidade?", "Quais são os recursos disponiveis para praticas esportivas na universidade?", "Estou interessado em participar de atividades esportivas, onde posso encontrar informacões?", "Como posso acessar informacões sobre os times esportivos da universidade?", "Quais são as opcões de esportes que posso praticar na universidade?", "Gostaria de saber mais sobre as instalacões esportivas da universidade, onde posso encontrar detalhes?", "Estou buscando por oportunidades de praticar esportes na universidade, como posso obter informacões?"],
+    "response": []
+  },
+  {
+    "tag": "acesso_moodle",
+    "patterns": ["Como faco para acessar plataformas de aprendizado online da universidade?", "Onde posso encontrar o Moodle da universidade?", "Quais são os passos para acessar as plataformas de aprendizado online?", "Estou buscando por acesso ao Moodle, como posso encontra-lo?", "Como posso acessar as plataformas de ensino a distância da universidade?", "Gostaria de saber como acessar as plataformas online de aprendizado da universidade.", "Onde posso encontrar informacões sobre as plataformas de ensino online oferecidas pela universidade?"],
+    "response": []
   }
+  
 ]
 }

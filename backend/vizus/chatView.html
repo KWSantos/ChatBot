@@ -19,6 +19,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script>
+
 </head>
 
 <body>
@@ -135,6 +137,7 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+
       const sendMessage = async (event) => {
         event.preventDefault()
         const input = document.getElementById('user-input')
@@ -143,76 +146,82 @@
         })
         input.value = ''
       }
+
       const messageHistory = [];
 
-    const loadMessage = async () => {
-        const messagesContainer = document.getElementById('messages');
+      const loadMessage = async () => {
+          const messagesContainer = document.getElementById('messages');
 
-        try {
-            // Obter as mensagens do usuário e do chat
-            const responseUser = await axios.get('http://localhost:3000/loadMessage');
-            const responseChat = await axios.get('http://localhost:3000/loadResponse');
-            const messageUser = responseUser.data;
+          try {
+              // Obter as mensagens do usuário e do chat
+              const responseUser = await axios.get('http://localhost:3000/loadMessage');
+              const responseChat = await axios.get('http://localhost:3000/loadResponse');
+              const messageUser = responseUser.data;
 
-            // Simular mensagem do chat
-            const messageChat = responseChat.data;
+              // Simular mensagem do chat
+              const messageChat = responseChat.data;
 
-            // Adicionar mensagens ao histórico
-            messageHistory.push({ type: 'user', message: messageUser });
-            messageHistory.push({ type: 'chat', message: messageChat });
+              // Adicionar mensagens ao histórico
+              messageHistory.push({ type: 'user', message: messageUser });
+              messageHistory.push({ type: 'chat', message: messageChat });
 
-            // Atualizar a div de mensagens
-            updateMessages(messagesContainer);
-        } catch (error) {
-            console.error('Erro ao carregar mensagens:', error);
-        }
-    };
+              // Atualizar a div de mensagens
+              updateMessages(messagesContainer);
+          } catch (error) {
+              console.error('Erro ao carregar mensagens:', error);
+          }
+      };
 
-    const updateMessages = (messagesContainer) => {
-        // Limpar a div de mensagens
-        messagesContainer.innerHTML = '';
+      const loadPDF = async () => {
+        const url = await axios.get('http://localhost:3000/loadPDF')
 
-        // Adicionar mensagens do histórico à div
-        messageHistory.forEach((messageData) => {
-            if (messageData.type === 'user') {
-                const userMessagesContainer = createUserMessage(messageData.message);
-                messagesContainer.appendChild(userMessagesContainer);
-            } else if (messageData.type === 'chat') {
-                const chatMessagesContainer = createChatMessage(messageData.message);
-                messagesContainer.appendChild(chatMessagesContainer);
-            }
-        });
+      }
 
-        // Rolar para o final da div
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    };
+      const updateMessages = (messagesContainer) => {
+          // Limpar a div de mensagens
+          messagesContainer.innerHTML = '';
 
-    const createUserMessage = (message) => {
-        const messagesDivUser = document.createElement('div');
-        const messageTextUser = document.createElement('p');
+          // Adicionar mensagens do histórico à div
+          messageHistory.forEach((messageData) => {
+              if (messageData.type === 'user') {
+                  const userMessagesContainer = createUserMessage(messageData.message);
+                  messagesContainer.appendChild(userMessagesContainer);
+              } else if (messageData.type === 'chat') {
+                  const chatMessagesContainer = createChatMessage(messageData.message);
+                  messagesContainer.appendChild(chatMessagesContainer);
+              }
+          });
 
-        messagesDivUser.className = 'chat-content user';
-        messageTextUser.innerText = `${message}`;
-        messagesDivUser.appendChild(messageTextUser);
+          // Rolar para o final da div
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      };
 
-        return messagesDivUser;
-    };
+      const createUserMessage = (message) => {
+          const messagesDivUser = document.createElement('div');
+          const messageTextUser = document.createElement('p');
 
-    const createChatMessage = (message) => {
-        const messagesDivChat = document.createElement('div');
-        const messagesDivChat1 = document.createElement('div');
-        const messageTextChat = document.createElement('p');
+          messagesDivUser.className = 'chat-content user';
+          messageTextUser.innerText = `${message}`;
+          messagesDivUser.appendChild(messageTextUser);
 
-        messagesDivChat.className = 'chat-left';
-        messagesDivChat1.className = 'chat-content';
-        messageTextChat.innerText = `${message}`;
-        messagesDivChat1.appendChild(messageTextChat);
-        messagesDivChat.appendChild(messagesDivChat1)
+          return messagesDivUser;
+      };
 
-        return messagesDivChat;
-    };
-      
-      window.sendMessage = sendMessage
+      const createChatMessage = (message) => {
+          const messagesDivChat = document.createElement('div');
+          const messagesDivChat1 = document.createElement('div');
+          const messageTextChat = document.createElement('p');
+
+          messagesDivChat.className = 'chat-left';
+          messagesDivChat1.className = 'chat-content';
+          messageTextChat.innerText = `${message}`;
+          messagesDivChat1.appendChild(messageTextChat);
+          messagesDivChat.appendChild(messagesDivChat1)
+
+          return messagesDivChat;
+      };
+        
+        window.sendMessage = sendMessage
     </script>
 
   </body>
