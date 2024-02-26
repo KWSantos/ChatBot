@@ -19,7 +19,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script>
 
 </head>
 
@@ -172,9 +171,15 @@
           }
       };
 
-      const loadPDF = async () => {
-        const url = await axios.get('http://localhost:3000/loadPDF')
-
+      const loadPDF = async (path, nome) => {
+        const urlBack = await axios.get('http://localhost:3000/loadPDF', {
+            path: path
+        })
+        const urlFront = urlBack.data
+        const linkDownload = document.createElement('a')
+        linkDownload.href = urlFront
+        linkDownload.download = nome
+        linkDownload.click()
       }
 
       const updateMessages = (messagesContainer) => {
@@ -214,7 +219,7 @@
 
           messagesDivChat.className = 'chat-left';
           messagesDivChat1.className = 'chat-content';
-          messageTextChat.innerText = `${message}`;
+          messageTextChat.innerHTML = `${message}`;
           messagesDivChat1.appendChild(messageTextChat);
           messagesDivChat.appendChild(messagesDivChat1)
 

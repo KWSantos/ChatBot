@@ -12,3 +12,10 @@ exports.getLoadResponse = ((req, res) => {
         res.send(resposta)
     })
 })
+
+exports.postLoadPDF = ((req, res) => {
+    chat.loadPDF(req.body)
+    .then((url) => {
+        res.send(url)
+    })
+})

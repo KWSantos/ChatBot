@@ -1,32 +1,32 @@
 {"intents": [
   {"tag": "saudacao",
    "patterns": ["Oi", "Ola", "Oi tudo bem:", "Tem alguem ai?", "Pode me ajudar", "E ai?", "Tudo tranquilo?", "Como vai você?", "Boa tarde!", "Bom dia!", "Boa noite!", "E ai, tudo certo?", "Ola, tudo bem?", "Opa, tudo bem por ai?", "Hey, como você esta?", "Saudacões!", "Como estão as coisas?", "Aoba", "E ai, beleza?", "Oi, tudo bom contigo?", "Que prazer te ver por aqui!", "Saudacões cordiais!", "Como esta o seu dia?", "Oiiee!" ],
-   "responses": ["Oi tudo bem e voce ?", "Ola, como posso te ajudar ?", "Oi, como podemos te ajudar?", "Coe, como posso ajudar?"],
+   "response": ["Oi tudo bem e voce ?", "Ola, como posso te ajudar ?", "Oi, como podemos te ajudar?", "Coe, como posso ajudar?"],
    "context_set": ""
   },
   {"tag": "despedida",
    "patterns": ["Tchau", "Ate mais", "abracos", "Adeus", "Até logo!", "Até breve!", "Até a próxima!", "Tchauzinho!", "Até logo mais!", "Nos vemos em breve!", "Adeusinho!", "Até mais tarde!", "Até a próxima vez!", "Até mais, então!", "Fique bem!", "Valeu pela conversa!", "Tchau, até a próxima oportunidade!", "Adeus, até algum dia!", "Que tudo corra bem para você!", "Fique em seguranca!" ],
-   "responses": ["Ate mais, obrigado!", "Tenha um otimo dia!", "Ate, um abraco."]
+   "response": ["Ate mais, obrigado!", "Tenha um otimo dia!", "Ate, um abraco."]
   },
   {"tag": "agradecimento",
    "patterns": ["Obrigado", "Obrigado pela ajuda", "Muito obrigado","Voce me ajudou", "valeu", "beijos lindo", "Obrigado pelo apoio!", "Agradeco pela assistência!", "Obrigado por tudo!", "Agradeco de coracão!", "Muito obrigado pela ajuda!", "Obrigado pela gentileza!", "Agradecido pela sua colaboracão!", "Agradeco imensamente!", "Muito obrigado pela sua atencão!", "Obrigado por ter me ajudado!", "Agradeco de todo o coracão!", "Agradeco por sua compreensão!", "Obrigado por seu apoio inestimavel!" ],
-   "responses": ["De nada!", "Fico feliz em ajudar!", "Disponha", "Por nada!", "Que isso, nao foi nada!"]
+   "response": ["De nada!", "Fico feliz em ajudar!", "Disponha", "Por nada!", "Que isso, nao foi nada!"]
   },
   {"tag": "horarioAluno",
    "patterns": ["Gostaria de saber sobre horarios das aulas?", "As aulas comecam que horas?", "Qual o horario de aula", "em que horario tenho aula hoje", "Pode me informar sobre os horarios das aulas?", "A que horas comecam as aulas?", "Qual é o cronograma das aulas?", "Gostaria de saber os horarios das minhas aulas.", "Quando é o horario de inicio das aulas?", "Em que horas devo comparecer às aulas?", "Quais são os horarios das turmas", "Como posso acessar os horarios das minhas aulas?", "Poderia me dizer os horarios de cada disciplina?", "Estou procurando pelos horarios de aula, pode me ajudar?"],
-   "responses": ["Claro, estes sao os seus horarios: https://graduacao.unicentro.br/aonline/default.asp", "Seus horarios estao aqui: https://graduacao.unicentro.br/aonline/default.asp", "Aqui estao seus horarios de hoje: "]
+   "response": ["Claro, estes sao os seus <a href='https://graduacao.unicentro.br/aonline/default.asp' target='_blank'>horarios</a>", "Seus horarios estao <a href='https://graduacao.unicentro.br/aonline/default.asp' target='_blank'>aqui</a>", "Aqui estao seus horarios de <a href='https://graduacao.unicentro.br/aonline/default.asp' target='_blank'> hoje </a>"]
   },
   {"tag": "horarioCampus",
    "patterns": ["Gostaria de saber sobre horarios do campus?", "em que horas o campus atende?", "Qual o horario de atendimento", "Pode me informar sobre os horarios de funcionamento do campus?", "A que horas o campus esta aberto?", "Quais são os horarios de atendimento do campus?", "Gostaria de saber os horarios de funcionamento do campus.", "Quando é que o campus abre e fecha?", "Em que horas posso encontrar o campus aberto?", "Quais são os horarios de acesso ao campus?", "Como posso saber os horarios de funcionamento do campus?", "Poderia me informar sobre os horarios de atendimento do campus?", "Estou procurando pelos horarios de funcionamento do campus, pode me ajudar?" ],
-   "responses": ["Claro, o campus fica aberto das 8:00 ate as 22:00, com pausa para o almoco", "Você pode ser atendido em qualquer horario entre 8:00 e 22:00, com pausa para o almoco entre 12:00 e 13:00"]
+   "response": ["Claro, o campus fica aberto das 8:00 ate as 22:00, com pausa para o almoco", "Você pode ser atendido em qualquer horario entre 8:00 e 22:00, com pausa para o almoco entre 12:00 e 13:00"]
   },
   {"tag": "editais",
    "patterns": ["Onde posso encontrar informacões sobre editais?", "Qual a aba do site para editais?", "Onde ficam os editais?", "Como posso acessar informacões sobre os editais?", "Onde posso encontrar os documentos de editais?", "Qual é a secão do site dedicada aos editais?", "Onde posso obter informacões sobre os editais em vigor?", "Em que parte do site estão disponiveis os editais?", "Como faco para acessar os editais atualizados?", "Onde estão localizados os anúncios de editais?", "Qual é o caminho para encontrar os editais online?", "Onde devo procurar por informacões especificas nos editais?", "Como posso verificar os editais disponiveis para consulta?" ],
-   "responses": ["Você pode encontrar os editais neste link: https://www3.unicentro.br/?s=editais.", "Claro, aqui esta o link para a pesquisa 'editais': https://www3.unicentro.br/?s=editais"]
+   "response": ["Você pode encontrar os editais neste link: https://www3.unicentro.br/?s=editais.", "Claro, aqui esta o link para a pesquisa 'editais': https://www3.unicentro.br/?s=editais"]
   },
   {"tag": "iniciacaoCientifica",
    "patterns": ["Onde tenho acesso as informacões sobre Iniciacao cientifica?", "Onde vejo sobre IC?", "Como posso saber mais sobre IC?", "Onde posso encontrar informacões sobre iniciacão cientifica?", "Onde encontro detalhes sobre a iniciacão cientifica?", "Como posso acessar informacões relacionadas à IC?", "Onde posso obter mais detalhes sobre a iniciacão cientifica?", "Como faco para saber mais sobre o programa de iniciacão cientifica?", "Onde estão disponiveis informacões sobre iniciacão cientifica?", "Como posso acessar recursos sobre iniciacão cientifica?", "Onde posso encontrar orientacões sobre iniciacão cientifica?", "Onde devo procurar para saber sobre oportunidades de iniciacão cientifica?", "Como posso me informar melhor sobre o programa de iniciacão cientifica?" ],
-   "responses": ["Voce pode encontrar mais informacões sobre Iniciacao Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
+   "response": ["Voce pode encontrar mais informacões sobre Iniciacao Cientifica neste link: https://www3.unicentro.br/propesp/ic/", "Saiba mais sobre IC neste link: https://www3.unicentro.br/propesp/ic/"]
   },
   {
     "tag": "informacoes_cursos",
@@ -81,78 +81,47 @@
   {
     "tag": "localizacao_decomp",
     "patterns": ["Como posso chegar no DECOMP?", "Onde fica o DECOMP?", "Qual é a localizacão do DECOMP?", "Como encontro o departamento da Computacão?", "Preciso ir ao DECOMP, onde fica?", "Estou procurando pelo prédio do DECOMP, pode me ajudar?", "Quais são as instrucões para chegar ao DECOMP?", "Como faco para encontrar o DECOMP no campus?", "O DECOMP esta em qual prédio?", "Estou perdido(a), como posso encontrar o DECOMP?"],
-    "response": ["Este e o caminho do centrinho ate o DECOMP: "]
+    "response": ["Este é o caminho do centrinho até o <a id='downloadLink' href='#' onclick='loadPDF(\"gs://chatbot-ef7da.appspot.com/Centrinho-DECOMP.pdf\", \"decomp.pdf\")'> DECOMP </a>"]
   },
   {
   "tag": "localizacao_ginasio_cedeteg",
   "patterns": ["Como posso chegar ao ginasio de esportes do CEDETEG?", "Onde fica o ginasio de esportes do CEDETEG?", "Qual é a localizacão exata do ginasio de esportes?", "Estou procurando pelo ginasio de esportes do CEDETEG, você pode me ajudar?", "Quais são as instrucões para encontrar o ginasio de esportes?", "Como faco para chegar ao ginasio de esportes do CEDETEG?", "O ginasio de esportes do CEDETEG esta em qual prédio?", "Estou perdido(a), como posso encontrar o ginasio de esportes?"],
-  "response": []
+  "response": ["Este e o caminho do centrinho ate o <a id='downloadLink' href='#' download='decomp.pdf' onclick='loadPDF(gs://chatbot-ef7da.appspot.com/CENTRINHO-GINASIO.pdf, ginasio.pdf)>Ginasio</a>"]
   }, 
   {
   "tag": "localizacao_farmacia_escola",
   "patterns": ["Onde fica a farmacia escola?", "Como posso encontrar a farmacia escola?", "Qual é a localizacão da farmacia escola?", "Estou procurando pela farmacia escola, você sabe onde fica?", "Quais são as direcões para chegar à farmacia escola?", "Como chegar à farmacia escola?", "Em qual prédio esta localizada a farmacia escola?", "Estou com dificuldades para encontrar a farmacia escola, pode me ajudar?"],
-  "response": []
-  },
-  {
-  "tag": "localizacao_farmacia_escola",
-  "patterns": ["Onde fica a farmacia escola?", "Como posso encontrar a farmacia escola?", "Qual é a localizacão da farmacia escola?", "Estou procurando pela farmacia escola, você sabe onde fica?", "Quais são as direcões para chegar à farmacia escola?", "Como chegar à farmacia escola?", "Em qual prédio esta localizada a farmacia escola?", "Estou com dificuldades para encontrar a farmacia escola, pode me ajudar?"],
-  "response": []
+  "response": ["Este e o caminho do centrinho ate a <a id='downloadLink' href='#' download='decomp.pdf' onclick='loadPDF(gs://chatbot-ef7da.appspot.com/CENTRINHO-FARMACIA.pdf, farmacia.pdf)>Farmacia</a>"]
   },
   {
     "tag": "localizacao_centrinho_cedeteg",
     "patterns": ["Onde fica o centrinho do CEDETEG?", "Como posso encontrar o centrinho do CEDETEG?", "Qual é a localizacão exata do centrinho do CEDETEG?", "Estou procurando pelo centrinho do CEDETEG, você pode me ajudar?", "Quais são as instrucões para encontrar o centrinho do CEDETEG?", "Como chegar ao centrinho do CEDETEG?", "O centrinho do CEDETEG esta em qual prédio?", "Estou com dificuldades para encontrar o centrinho do CEDETEG, pode me ajudar?"],
-    "response": []
-  },
-  {
-    "tag": "localizacao_bloco_1",
-    "patterns": ["Onde fica o Bloco 1?", "Como posso encontrar o Bloco 1?", "Qual é a localizacão do Bloco 1?", "Onde posso encontrar o prédio Bloco 1?", "Estou procurando pelo Bloco 1, você pode me ajudar?", "Como chegar ao Bloco 1?"],
-    "response": []
-  },
-  {
-    "tag": "localizacao_bloco_2",
-    "patterns": ["Onde fica o Bloco 2?", "Como posso encontrar o Bloco 2?", "Qual é a localizacão do Bloco 2?", "Onde posso encontrar o prédio Bloco 2?", "Estou procurando pelo Bloco 2, você pode me ajudar?", "Como chegar ao Bloco 2?"],
-    "response": []
-  },
-  {
-    "tag": "localizacao_bloco_7",
-    "patterns": ["Onde fica o Bloco 7?", "Como posso encontrar o Bloco 7?", "Qual é a localizacão do Bloco 7?", "Onde posso encontrar o prédio Bloco 7?", "Estou procurando pelo Bloco 7, você pode me ajudar?", "Como chegar ao Bloco 7?"],
-    "response": []
-  },
-  {
-    "tag": "localizacao_bloco_6",
-    "patterns": ["Onde fica o Bloco 6?", "Como posso encontrar o Bloco 6?", "Qual é a localizacão do Bloco 6?", "Onde posso encontrar o prédio Bloco 6?", "Estou procurando pelo Bloco 6, você pode me ajudar?", "Como chegar ao Bloco 6?"],
-    "response": []
-  },
-  {
-    "tag": "localizacao_lab_eng_alimentos",
-    "patterns": ["Onde fica o laboratório de Engenharia de Alimentos?", "Como posso encontrar o laboratório de Engenharia de Alimentos?", "Qual é a localizacão do laboratório de Engenharia de Alimentos?", "Onde posso encontrar o laboratório especifico de Engenharia de Alimentos?", "Estou procurando pelo laboratório de Engenharia de Alimentos, você pode me ajudar?", "Como chegar ao laboratório de Engenharia de Alimentos?"],
-    "response": []
+    "response": ["Este e o caminho do centrinho ate o <a id='downloadLink' href='#' download='decomp.pdf' onclick='loadPDF(gs://chatbot-ef7da.appspot.com/CEDETEG-CENTRINHO.pdf, centrinho.pdf)>Centrinho</a>"]
   },
   {
     "tag": "informacoes_estagios",
-    "patterns": ["Onde encontro informacões sobre estagios?", "Como posso obter detalhes sobre oportunidades de estagio?", "Quais são as fontes de informacão sobre estagios?", "Estou procurando por informacões sobre estagios, onde devo buscar?", "Como faco para encontrar oportunidades de estagio?", "Quero saber mais sobre estagios, onde posso encontrar recursos?", "Quais são os canais para encontrar estagios?", "Onde posso obter orientacões sobre estagios?", "Estou interessado(a) em estagios, como posso comecar minha pesquisa?", "Quais são as maneiras de encontrar estagios disponiveis?"],
-    "response": []
+    "patterns": ["Onde encontro informações sobre estágios?", "Como posso obter detalhes sobre oportunidades de estágio?", "Quais são as fontes de informação sobre estágios?", "Estou procurando por informações sobre estágios, onde devo buscar?", "Como faço para encontrar oportunidades de estágio?", "Quero saber mais sobre estágios, onde posso encontrar recursos?", "Quais são os canais para encontrar estágios?", "Onde posso obter orientações sobre estágios?", "Estou interessado(a) em estágios, como posso começar minha pesquisa?", "Quais são as maneiras de encontrar estágios disponíveis?"],
+    "response": ["Você pode encontrar informações sobre estágios acessando este link: [https://www3.unicentro.br/estagios/]","Para obter detalhes sobre oportunidades de estágio, visite este link: [https://www3.unicentro.br/estagios/]","As fontes de informação sobre estágios estão disponíveis neste link: [https://www3.unicentro.br/estagios/]", "Se está procurando por informações sobre estágios, recomendamos começar sua busca acessando este link: [https://www3.unicentro.br/estagios/]", "Para encontrar oportunidades de estágio, acesse este link: [https://www3.unicentro.br/estagios/]","Recursos sobre estágios podem ser encontrados neste link: [https://www3.unicentro.br/estagios/]","Os canais para encontrar estágios estão disponíveis neste link: [https://www3.unicentro.br/estagios/]","Para orientações sobre estágios, visite este link: [https://www3.unicentro.br/estagios/]","Se está interessado(a) em estágios, comece sua pesquisa acessando este link: [https://www3.unicentro.br/estagios/]","Diversas maneiras de encontrar estágios disponíveis podem ser exploradas neste link: [https://www3.unicentro.br/estagios/]"]
   },
   {
     "tag": "acesso_recursos_online_biblioteca",
-    "patterns": ["Como faco para acessar os recursos online da biblioteca?", "Onde posso encontrar os recursos online da biblioteca?", "Quais são os passos para acessar os recursos online da biblioteca?", "Estou procurando por recursos online da biblioteca, como posso encontra-los?", "Como posso acessar os materiais digitais da biblioteca?", "Quais são as opcões para acessar os recursos digitais da biblioteca?", "Como acessar o acervo online da biblioteca?", "Preciso de ajuda para encontrar os recursos online da biblioteca, você pode me ajudar?"],
-    "response": []
+    "patterns": ["Como faço para acessar os recursos online da biblioteca?", "Onde posso encontrar os recursos online da biblioteca?", "Quais são os passos para acessar os recursos online da biblioteca?", "Estou procurando por recursos online da biblioteca, como posso encontrá-los?", "Como posso acessar os materiais digitais da biblioteca?", "Quais são as opções para acessar os recursos digitais da biblioteca?", "Como acessar o acervo online da biblioteca?", "Preciso de ajuda para encontrar os recursos online da biblioteca, você pode me ajudar?"],
+    "response": ["Você pode acessar os recursos online da biblioteca diretamente através do site oficial da biblioteca da Unicentro. Visite: [https://www3.unicentro.br/bibliotecas/]", "Para encontrar os recursos online da biblioteca, visite o site da biblioteca da Unicentro. Acesse: [https://www3.unicentro.br/bibliotecas/]", "Os passos para acessar os recursos online da biblioteca estão disponíveis no site oficial da biblioteca da Unicentro. Confira em: [https://www3.unicentro.br/bibliotecas/]", "Para encontrar os recursos online da biblioteca, navegue pelo site oficial da biblioteca da Unicentro. Acesse: [https://www3.unicentro.br/bibliotecas/]",  "Para acessar os materiais digitais da biblioteca, acesse o site oficial da biblioteca da Unicentro. Veja mais em: [https://www3.unicentro.br/bibliotecas/]"]
   },
   {
     "tag": "acesso_grade_curricular",
-    "patterns": ["Como posso acessar minha grade curricular?", "Onde posso encontrar informacões sobre minha grade curricular?", "Quais são os passos para acessar minha grade curricular?", "Estou procurando por minha grade curricular, como posso encontra-la?", "Como posso visualizar minha grade curricular?", "Quais são as opcões para acessar minha grade curricular?", "Como posso verificar os cursos e disciplinas em minha grade curricular?", "Preciso de ajuda para encontrar minha grade curricular, você pode me ajudar?"],
-    "response": []
-    },
+    "patterns": ["Como posso acessar minha grade curricular?", "Onde posso encontrar informações sobre minha grade curricular?", "Quais são os passos para acessar minha grade curricular?", "Estou procurando por minha grade curricular, como posso encontrá-la?", "Como posso visualizar minha grade curricular?", "Quais são as opções para acessar minha grade curricular?", "Como posso verificar os cursos e disciplinas em minha grade curricular?", "Preciso de ajuda para encontrar minha grade curricular, você pode me ajudar?"],
+    "response": ["Voce pode acessar a grade curricular atraves do seu Aluno Online, na aba a esquerda e na opcao horarios"]
+  },
   {
     "tag": "informacoes_praticas_esportivas",
-    "patterns": ["Onde posso encontrar informacões sobre praticas esportivas na universidade?", "Como posso saber mais sobre as atividades esportivas oferecidas pela universidade?", "Quais são os recursos disponiveis para praticas esportivas na universidade?", "Estou interessado em participar de atividades esportivas, onde posso encontrar informacões?", "Como posso acessar informacões sobre os times esportivos da universidade?", "Quais são as opcões de esportes que posso praticar na universidade?", "Gostaria de saber mais sobre as instalacões esportivas da universidade, onde posso encontrar detalhes?", "Estou buscando por oportunidades de praticar esportes na universidade, como posso obter informacões?"],
-    "response": []
+    "patterns": ["Onde posso encontrar informações sobre práticas esportivas na universidade?","Como posso saber mais sobre as atividades esportivas oferecidas pela universidade?", "Quais são os recursos disponíveis para práticas esportivas na universidade?", "Estou interessado em participar de atividades esportivas, onde posso encontrar informações?", "Como posso acessar informações sobre os times esportivos da universidade?","Quais são as opções de esportes que posso praticar na universidade?","Gostaria de saber mais sobre as instalações esportivas da universidade, onde posso encontrar detalhes?", "Estou buscando por oportunidades de praticar esportes na universidade, como posso obter informações?"],
+    "response": ["Você pode encontrar informações sobre práticas esportivas na universidade seguindo o perfil do Centro de Desportos do CEDTEG no Instagram: [https://www.instagram.com/cdr.cedeteg.unicentro/]", "Para saber mais sobre as atividades esportivas oferecidas pela universidade, confira o perfil do Centro de Desportos do CEDTEG no Instagram: [https://www.instagram.com/cdr.cedeteg.unicentro/]", "Todos os recursos disponíveis para práticas esportivas na universidade podem ser encontrados no perfil do Centro de Desportos do CEDTEG no Instagram: [https://www.instagram.com/cdr.cedeteg.unicentro/]", "Se você está interessado em participar de atividades esportivas, pode encontrar informações úteis no perfil do Centro de Desportos do CEDTEG no Instagram: [https://www.instagram.com/cdr.cedeteg.unicentro/]", "Acesse o perfil do Centro de Desportos do CEDTEG no Instagram para obter informações sobre os times esportivos da universidade: [https://www.instagram.com/cdr.cedeteg.unicentro/]"]
   },
   {
     "tag": "acesso_moodle",
-    "patterns": ["Como faco para acessar plataformas de aprendizado online da universidade?", "Onde posso encontrar o Moodle da universidade?", "Quais são os passos para acessar as plataformas de aprendizado online?", "Estou buscando por acesso ao Moodle, como posso encontra-lo?", "Como posso acessar as plataformas de ensino a distância da universidade?", "Gostaria de saber como acessar as plataformas online de aprendizado da universidade.", "Onde posso encontrar informacões sobre as plataformas de ensino online oferecidas pela universidade?"],
-    "response": []
-  }
-  
+    "patterns": ["Como faço para acessar plataformas de aprendizado online da universidade?","Onde posso encontrar o Moodle da universidade?", "Quais são os passos para acessar as plataformas de aprendizado online?","Estou buscando por acesso ao Moodle, como posso encontrá-lo?","Como posso acessar as plataformas de ensino a distância da universidade?", "Gostaria de saber como acessar as plataformas online de aprendizado da universidade.","Onde posso encontrar informações sobre as plataformas de ensino online oferecidas pela universidade?"],
+    "response": [ "Para acessar as plataformas de aprendizado online da universidade, basta entrar no Moodle através deste link: [https://moodle.unicentro.br/login/index.php]", "Você pode encontrar o Moodle da universidade acessando este link: [https://moodle.unicentro.br/login/index.php]", "Os passos para acessar as plataformas de aprendizado online são simples. Primeiro, acesse o Moodle pelo link: [https://moodle.unicentro.br/login/index.php]",  "Se você está buscando acesso ao Moodle, pode encontrá-lo facilmente clicando neste link: [https://moodle.unicentro.br/login/index.php]",  "Acesse as plataformas de ensino a distância da universidade através do Moodle neste link: [https://moodle.unicentro.br/login/index.php]" ]
+  } 
 ]
 }

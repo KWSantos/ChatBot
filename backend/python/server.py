@@ -50,7 +50,7 @@ def get_response(lista, jsons):
     intent_list = jsons['intents']
     for i in intent_list:
         if i['tag'] == tag:
-            result = random.choice(i['responses'])
+            result = random.choice(i['response'])
             break
     return result
 

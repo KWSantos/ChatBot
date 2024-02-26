@@ -1,7 +1,7 @@
 const axios = require("axios")
 const app = require('../services/configFirebase')
 const { getDatabase , ref, onValue, orderByChild, limitToLast,query } = require('firebase/database')
-const { getStorage , ref, getDownloadURL} = require('firebase/storage')
+const { getStorage , ref: storageRef, getDownloadURL} = require('firebase/storage')
 
 class chatModel {
     async loadResponse(){
@@ -21,6 +21,11 @@ class chatModel {
                 onlyOnce: true,
             });
         })
+    }
+    async loadPDF(path){
+        const storage = getStorage(app)
+        const pathFile = storageRef(storage, path)
+        return getDownloadURL(pathFile)
     }
 }
 
